@@ -281,13 +281,17 @@
       return `<div class="nav-mode" aria-label="Navigation mode"><span class="nav-mode-label">View</span><button type="button" data-nav-mode="scroll" aria-pressed="true">Scroll</button><button type="button" data-nav-mode="filter" aria-pressed="false">Filter</button></div>`;
     }
 
+    function stickyHeaderMarkup() {
+      return `<div class="sticky-header"><div class="sticky-header-top"><a class="sticky-logo" href="#top">The Daily Report</a>${navModeMarkup()}<button class="icon-btn sticky-theme" type="button" data-theme-toggle aria-label="Toggle light and dark mode">${activeTheme === 'light' ? '☾' : '☼'}</button></div><div class="sticky-header-nav-row"><nav class="sticky-nav" aria-label="Sticky edition navigation">${navLinks()}</nav>${editionDateNav()}</div></div>`;
+    }
+
     function header() {
-      return `<header class="masthead">
+      return `${stickyHeaderMarkup()}<header class="masthead">
         <div class="forecast" aria-label="Today and seven-day forecast">
           <div class="forecast-today"><span class="forecast-icon">🌤️</span><div><div class="eyebrow">Today in Valencia</div><div class="forecast-temp">29° / 21°</div><div class="forecast-copy">Mostly sunny · light sea breeze</div></div></div>
           <div class="forecast-strip">${edition.forecast.map(([day, icon, temp, condition]) => `<div class="forecast-day"><span class="forecast-icon">${icon}</span><div class="eyebrow">${day}</div><strong>${temp}</strong><div class="forecast-copy">${condition}</div></div>`).join('')}</div>
         </div>
-      </header><div class="sticky-header"><div class="sticky-header-top"><a class="sticky-logo" href="#top">The Daily Report</a>${navModeMarkup()}<button class="icon-btn sticky-theme" type="button" data-theme-toggle aria-label="Toggle light and dark mode">${activeTheme === 'light' ? '☾' : '☼'}</button></div><div class="sticky-header-nav-row"><nav class="sticky-nav" aria-label="Sticky edition navigation">${navLinks()}</nav>${editionDateNav()}</div></div>`;
+      </header>`;
     }
 
     function cardMarkup(card) {
