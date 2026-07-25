@@ -1,0 +1,476 @@
+<!doctype html>
+<!-- GitHub Pages: root index.html is the current edition. Archive the previous edition before replacing it. -->
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Daily Report — prototype</title>
+  <meta name="description" content="A self-contained prototype edition of The Daily Report.">
+  <style>
+    :root {
+      --paper: #f4f0e7;
+      --paper-2: #ebe5d7;
+      --ink: #171716;
+      --muted: #756f64;
+      --faint: #bcb4a5;
+      --rule: #cfc7b8;
+      --accent: #a33a2b;
+      --accent-2: #d87953;
+      --wash: #eee8dc;
+      --card: #f9f6ef;
+      --shadow: 0 20px 60px rgba(55, 43, 26, .10);
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    }
+
+    [data-theme="dark"] {
+      --paper: #1b1a18;
+      --paper-2: #25231f;
+      --ink: #f1ebde;
+      --muted: #afa594;
+      --faint: #6e685e;
+      --rule: #464139;
+      --accent: #e2876c;
+      --accent-2: #c65f49;
+      --wash: #292721;
+      --card: #211f1c;
+      --shadow: 0 20px 60px rgba(0, 0, 0, .24);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--serif); }
+    button, a { color: inherit; }
+    button { font: inherit; }
+    a { text-decoration: none; }
+    .shell { width: min(1440px, calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow { color: var(--accent); font: 700 10px/1 var(--sans); letter-spacing: .18em; text-transform: uppercase; }
+    .sans { font-family: var(--sans); }
+    .muted { color: var(--muted); }
+    .rule { border-top: 1px solid var(--rule); }
+    .prototype-badge { position: fixed; top: 12px; left: 12px; z-index: 50; background: var(--ink); color: var(--paper); padding: 7px 10px; border-radius: 999px; font: 700 10px var(--sans); letter-spacing: .12em; text-transform: uppercase; box-shadow: var(--shadow); }
+
+    /* Shared chrome */
+    .masthead { padding: 30px 0 18px; border-bottom: 3px double var(--ink); }
+    .masthead-top, .section-heading, .story-meta, .detail-top, .footer-line { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .masthead-top { position: relative; border-bottom: 1px solid var(--rule); padding-bottom: 14px; }
+    .dateline { font: 700 10px var(--sans); letter-spacing: .14em; text-transform: uppercase; }
+    .edition-date-nav { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+    .edition-date-nav a, .edition-arrow { color: var(--muted); font: 700 15px/1 var(--sans); }
+    .edition-date-nav a:hover { color: var(--accent); }
+    .edition-arrow.disabled { color: var(--faint); }
+    .sticky-header { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 22px; min-height: 48px; padding: 9px 0; border-bottom: 1px solid var(--rule); background: var(--paper); }
+    .sticky-logo { flex: 0 0 auto; font-size: 22px; font-weight: 500; letter-spacing: -.045em; white-space: nowrap; }
+    .sticky-logo:hover, .sticky-nav a:hover { color: var(--accent); }
+    .sticky-nav { display: flex; align-items: center; gap: 15px; min-width: 0; overflow-x: auto; font: 11px var(--sans); }
+    .sticky-nav a { color: var(--muted); white-space: nowrap; }
+    .sticky-nav a.active { color: var(--accent); font-weight: 700; }
+    .nav-mode { display: flex; flex: 0 0 auto; align-items: center; gap: 3px; margin-left: auto; padding: 3px; border: 1px solid var(--rule); border-radius: 999px; font: 10px var(--sans); }
+    .nav-mode-label { padding: 0 5px 0 7px; color: var(--muted); }
+    .nav-mode button { padding: 5px 8px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); cursor: pointer; font: 700 10px var(--sans); }
+    .nav-mode button.active, .nav-mode button:hover { background: var(--ink); color: var(--paper); }
+    [data-content-group][hidden] { display: none; }
+    #news, #sports, #events, #weekly { scroll-margin-top: 70px; }
+    .forecast { display: grid; grid-template-columns: 1.15fr 2.85fr; gap: 14px; margin-top: 0; padding-top: 14px; border-top: 0; }
+    .forecast-today, .forecast-day { min-height: 74px; padding: 10px 12px; background: var(--wash); }
+    .forecast-today { display: flex; align-items: center; gap: 12px; }
+    .forecast-icon { font-size: 27px; line-height: 1; }
+    .forecast-temp { margin-top: 4px; font-size: 21px; }
+    .forecast-copy { color: var(--muted); font: 10px/1.35 var(--sans); }
+    .forecast-strip { display: grid; grid-template-columns: repeat(7, minmax(78px, 1fr)); gap: 6px; overflow-x: auto; }
+    .forecast-day { min-width: 78px; }
+    .forecast-day strong { display: block; margin: 8px 0 3px; font-size: 15px; font-weight: 500; }
+    .forecast-day .forecast-icon { float: right; font-size: 18px; }
+    .icon-btn, .text-btn { border: 1px solid var(--rule); background: transparent; cursor: pointer; }
+    .icon-btn { width: 34px; height: 30px; border-radius: 50%; }
+    .text-btn { padding: 8px 11px; font: 700 10px var(--sans); letter-spacing: .08em; text-transform: uppercase; }
+    .icon-btn:hover, .text-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .section { margin: 42px 0 0; }
+    .section-heading { margin-bottom: 14px; }
+    .section-heading h2 { margin: 0; font-size: 26px; font-weight: 500; letter-spacing: -.03em; }
+    .section-heading p { margin: 5px 0 0; color: var(--muted); font: 11px var(--sans); }
+    .count { color: var(--muted); font: 11px var(--sans); }
+    .card-rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(220px, 1fr); gap: 12px; overflow-x: auto; padding: 3px 2px 10px; scroll-snap-type: x mandatory; }
+    .card { min-height: 235px; padding: 17px; background: var(--card); border: 1px solid var(--rule); border-top: 3px solid var(--ink); display: flex; flex-direction: column; cursor: pointer; scroll-snap-align: start; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+    .card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: var(--shadow); }
+    .card .tag { color: var(--accent); font: 700 10px var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+    .card h3 { margin: 15px 0 10px; font-size: 21px; line-height: 1.05; font-weight: 500; }
+    .card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.42; }
+    .card .story-meta { margin-top: auto; padding-top: 17px; color: var(--muted); font: 10px var(--sans); }
+    .signal { display: inline-flex; align-items: center; gap: 5px; }
+    .signal::before { content: ''; width: 6px; height: 6px; display: inline-block; border-radius: 50%; background: var(--accent); }
+    .rollup { margin: 52px 0 0; padding: 25px 0 0; border-top: 3px double var(--ink); }
+    .desk-pulse { padding: 18px; border: 1px solid var(--rule); background: var(--wash); }
+    .desk-pulse strong { display: block; margin: 7px 0; font-size: 31px; font-weight: 500; }
+    .desk-pulse p { margin: 0; font: 11px/1.4 var(--sans); }
+    .rollup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .rollup h3 { margin: 8px 0; font-size: 27px; font-weight: 500; }
+    .rollup p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.5; }
+    .rollup-layout { display: grid; grid-template-columns: 1.15fr .85fr; gap: 32px; align-items: start; }
+    .rollup-main h1 { margin: 8px 0 12px; max-width: 760px; font-size: clamp(42px, 6vw, 82px); line-height: .9; font-weight: 500; letter-spacing: -.065em; }
+    .rollup-main p { max-width: 680px; font-size: 18px; }
+    .rollup-cards { display: grid; gap: 12px; }
+    .rollup-summary { padding: 17px; border: 1px solid var(--rule); background: var(--wash); }
+    .rollup-summary h3 { margin: 6px 0 7px; font-size: 25px; font-weight: 500; }
+    .rollup-summary p { font-size: 14px; line-height: 1.4; }
+    .rollup-pulse { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 20px; padding-top: 16px; border-top: 1px solid var(--rule); }
+    .rollup-pulse-items { display: flex; flex-wrap: wrap; gap: 18px; color: var(--muted); font: 11px var(--sans); }
+    .rollup-pulse-items strong { margin-right: 4px; color: var(--ink); font: 500 17px var(--serif); }
+    .footer { margin: 65px 0 130px; padding-top: 14px; border-top: 1px solid var(--rule); color: var(--muted); font: 10px var(--sans); }
+
+    /* Variant A: broadsheet */
+    .edition-a .section-intro { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; margin: 34px 0 18px; align-items: end; }
+    .edition-a .section-intro h1 { margin: 0; font-size: clamp(36px, 6vw, 76px); line-height: .92; font-weight: 500; letter-spacing: -.06em; }
+    .edition-a .section-intro p { max-width: 310px; margin: 0; color: var(--muted); font-size: 15px; line-height: 1.4; }
+    .edition-a .card-rail { grid-auto-columns: minmax(235px, 1fr); }
+    .edition-a .rollup { margin-top: 0; padding-top: 24px; padding-bottom: 24px; border-top: 0; border-bottom: 3px double var(--ink); }
+
+    /* Variant B: editor's desk */
+    .edition-b { display: grid; grid-template-columns: 235px minmax(0, 1fr); gap: 36px; }
+    .edition-b .masthead, .edition-b .sticky-header { grid-column: 1 / -1; }
+    .desk-rail { padding-top: 36px; border-right: 1px solid var(--rule); }
+    .desk-rail h2 { margin: 0 0 20px; font-size: 20px; font-weight: 500; }
+    .desk-nav { display: grid; gap: 3px; }
+    .desk-nav a { display: flex; justify-content: space-between; padding: 9px 10px; color: var(--muted); font: 12px var(--sans); border-left: 2px solid transparent; }
+    .desk-nav a:hover, .desk-nav a.active { color: var(--ink); background: var(--wash); border-color: var(--accent); }
+    .desk-note { margin-top: 30px; padding: 15px; background: var(--wash); }
+    .desk-note p { margin: 8px 0 0; color: var(--muted); font-size: 13px; line-height: 1.45; }
+    .desk-main { min-width: 0; }
+    .desk-lead { display: grid; grid-template-columns: 1.35fr 1fr; gap: 28px; padding: 36px 0 26px; border-bottom: 1px solid var(--rule); }
+    .desk-lead h1 { margin: 8px 0 14px; max-width: 720px; font-size: clamp(38px, 5.5vw, 74px); font-weight: 500; line-height: .92; letter-spacing: -.065em; }
+    .desk-lead p { margin: 0; max-width: 600px; color: var(--muted); font-size: 17px; line-height: 1.45; }
+    .desk-lead .desk-pulse { align-self: end; }
+    .edition-b .section { margin-top: 30px; }
+    .edition-b .card-rail { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-flow: row; overflow: visible; }
+    .edition-b .card { min-height: 210px; }
+    .edition-b .rollup-grid { grid-template-columns: 1fr; }
+
+    /* Variant C: briefing */
+    .edition-c .masthead { padding-bottom: 28px; }
+    .edition-c .title { text-align: left; max-width: 800px; margin-left: 0; }
+    .edition-c .dek { margin-left: 0; text-align: left; }
+    .briefing-intro { display: flex; gap: 20px; justify-content: space-between; align-items: end; padding: 32px 0 20px; border-bottom: 1px solid var(--rule); }
+    .briefing-intro h1 { margin: 0; font-size: clamp(35px, 6vw, 72px); line-height: .88; font-weight: 500; letter-spacing: -.06em; }
+    .briefing-intro p { max-width: 300px; margin: 0; color: var(--muted); font: 12px/1.5 var(--sans); }
+    .briefing-list { display: grid; grid-template-columns: 1fr 1fr; gap: 0 34px; }
+    .briefing-list .section { margin-top: 0; padding: 24px 0 0; }
+    .briefing-list .section-heading { align-items: end; }
+    .briefing-list .card-rail { display: grid; grid-auto-flow: unset; grid-template-columns: 1fr; overflow: visible; padding: 0; }
+    .briefing-list .card { min-height: 0; display: grid; grid-template-columns: 30px 1fr; gap: 10px; padding: 15px 0; border: 0; border-top: 1px solid var(--rule); background: transparent; cursor: pointer; }
+    .briefing-list .card:hover { transform: none; box-shadow: none; background: var(--wash); }
+    .briefing-list .card .tag { grid-column: 2; order: 2; }
+    .briefing-list .card h3 { grid-column: 2; order: 3; margin: 5px 0 5px; font-size: 20px; }
+    .briefing-list .card p { grid-column: 2; order: 4; }
+    .briefing-list .card .story-meta { grid-column: 2; order: 5; margin-top: 9px; padding-top: 0; }
+    .briefing-list .card::before { grid-column: 1; grid-row: 1 / span 5; content: counter(item); counter-increment: item; color: var(--accent); font: 700 15px var(--sans); }
+    .briefing-list .card-rail { counter-reset: item; }
+    .briefing-list .section:nth-child(3) { grid-column: 1 / -1; }
+    .briefing-list .section:nth-child(3) .card-rail { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .briefing-list .section:nth-child(3) .card { display: block; padding: 15px; border: 1px solid var(--rule); }
+    .briefing-list .section:nth-child(3) .card::before { display: none; }
+    .briefing-list .section:nth-child(3) .card .tag, .briefing-list .section:nth-child(3) .card h3, .briefing-list .section:nth-child(3) .card p, .briefing-list .section:nth-child(3) .card .story-meta { display: block; }
+
+    /* Modal, feedback, switcher */
+    .modal-backdrop { position: fixed; inset: 0; z-index: 30; display: none; place-items: center; padding: 20px; background: rgba(15, 13, 11, .58); }
+    .modal-backdrop.open { display: grid; }
+    .modal { width: min(720px, 100%); max-height: min(760px, calc(100vh - 40px)); overflow: auto; padding: 27px; background: var(--paper); border: 1px solid var(--rule); box-shadow: 0 30px 100px rgba(0, 0, 0, .25); }
+    .modal h2 { margin: 15px 0 12px; font-size: clamp(30px, 5vw, 52px); line-height: .95; font-weight: 500; letter-spacing: -.05em; }
+    .modal-summary { color: var(--muted); font-size: 17px; line-height: 1.5; }
+    .modal-copy { padding: 20px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .modal-copy p { margin: 0 0 12px; font-size: 16px; line-height: 1.5; }
+    .modal-copy p:last-child { margin-bottom: 0; }
+    .evidence { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 18px 0; }
+    .evidence div { padding: 10px; background: var(--wash); }
+    .evidence strong { display: block; margin-top: 5px; font: 700 11px var(--sans); }
+    .sources { margin-top: 20px; }
+    .sources a { display: block; padding: 8px 0; border-bottom: 1px solid var(--rule); color: var(--accent); font: 12px var(--sans); }
+    .feedback { display: flex; gap: 8px; align-items: center; margin-top: 22px; padding-top: 15px; border-top: 1px solid var(--rule); }
+    .feedback span { margin-right: auto; color: var(--muted); font: 11px var(--sans); }
+    .switcher { position: fixed; z-index: 40; bottom: 18px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; padding: 8px 10px; color: #fff; background: #151513; border-radius: 999px; box-shadow: 0 12px 40px rgba(0,0,0,.25); font: 11px var(--sans); }
+    .switcher button { width: 27px; height: 27px; border: 0; border-radius: 50%; background: #35332e; color: #fff; cursor: pointer; }
+    .switcher button:hover { background: var(--accent); }
+    .switcher-label { min-width: 150px; text-align: center; }
+    .toast { position: fixed; right: 18px; bottom: 18px; z-index: 45; max-width: 280px; padding: 12px 14px; color: var(--paper); background: var(--ink); border-left: 3px solid var(--accent); font: 12px/1.4 var(--sans); opacity: 0; transform: translateY(10px); transition: .2s; pointer-events: none; }
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 780px) {
+      .shell { width: min(100% - 24px, 640px); }
+      .masthead { padding-top: 40px; }
+      .masthead-top { align-items: flex-start; }
+      .edition-date-nav { position: static; order: 3; flex-basis: 100%; justify-content: center; transform: none; margin-top: 8px; }
+      .sticky-header { flex-wrap: wrap; gap: 9px 14px; }
+      .sticky-nav { order: 3; flex-basis: 100%; padding-bottom: 2px; }
+      .nav-mode { margin-left: auto; }
+      .forecast { display: block; }
+      .forecast-strip { margin-top: 8px; padding-bottom: 3px; }
+      .section-intro, .edition-a .section-intro, .desk-lead, .briefing-intro { display: block; }
+      .edition-a .section-intro p, .briefing-intro p { margin-top: 18px; }
+      .rollup-grid, .briefing-list, .briefing-list .section:nth-child(3) .card-rail { grid-template-columns: 1fr; }
+      .edition-b { display: block; }
+      .desk-rail { padding: 20px 0 0; border-right: 0; border-bottom: 1px solid var(--rule); }
+      .desk-nav { display: flex; overflow-x: auto; margin-bottom: 10px; }
+      .desk-nav a { white-space: nowrap; }
+      .desk-note { display: none; }
+      .desk-lead { padding-top: 25px; }
+      .desk-pulse { margin-top: 22px; }
+      .edition-b .card-rail { grid-template-columns: 1fr; }
+      .evidence { grid-template-columns: 1fr; }
+      .switcher-label { min-width: 126px; }
+      .rollup-layout { display: block; }
+      .rollup-cards { margin-top: 22px; }
+      .rollup-pulse { display: block; }
+      .rollup-pulse-items { margin-top: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="prototype-badge">Mock edition · prototype</div>
+  <main id="app"></main>
+  <div class="modal-backdrop" id="modalBackdrop" role="dialog" aria-modal="true" aria-label="Story detail">
+    <article class="modal" id="modal"></article>
+  </div>
+  <div class="switcher" aria-label="Prototype layout switcher">
+    <button type="button" data-switch="prev" aria-label="Previous layout">←</button>
+    <span class="switcher-label" id="switcherLabel"></span>
+    <button type="button" data-switch="next" aria-label="Next layout">→</button>
+  </div>
+  <div class="toast" id="toast"></div>
+
+  <script>
+    // Three layout variants for the first visual prototype. Switch with ?variant=a|b|c.
+    const edition = {
+      date: 'Saturday, July 25, 2026',
+      dateISO: '2026-07-25',
+      edition: 'Midnight edition',
+      time: '00:00 CEST',
+      lead: 'A calm, useful read for the stories that shape your day.',
+      newsRollup: 'A quick tour of the major currents: diplomacy is moving in small increments, Ohio is balancing growth with pressure on local systems, and Valencia is leaning into a busy cultural summer.',
+      sportsRollup: 'The sports desk is watching the long season take shape: roster decisions, early form, and the small signals that become much bigger stories by autumn.',
+      forecast: [
+        ['Sun', '☀️', '31° / 22°', 'Bright'],
+        ['Mon', '⛅', '30° / 21°', 'Partly cloudy'],
+        ['Tue', '☀️', '32° / 22°', 'Sunny'],
+        ['Wed', '🌤️', '31° / 23°', 'Warm'],
+        ['Thu', '🌦️', '29° / 21°', 'Passing showers'],
+        ['Fri', '☀️', '30° / 20°', 'Clear'],
+        ['Sat', '⛅', '28° / 20°', 'Breezy'],
+      ],
+      sections: []
+    };
+
+    const definitions = [
+      ['International', 'News', ['Ceasefire talks reopen a narrow diplomatic channel', 'Trade ministers test a new supply-chain compact', 'A heatwave response becomes a test of city resilience', 'Aid agencies coordinate a wider corridor for displaced families', 'New satellite data redraws the map of coastal risk']],
+      ['Ohio', 'News', ['Ohio cities compete for the next battery investment', 'Lake Erie restoration enters its most ambitious phase', 'School districts compare notes on a changing enrollment map', 'A new rail connection puts mid-sized towns in the spotlight', 'State lawmakers revisit the future of rural healthcare']],
+      ['United States', 'News', ['The quiet reshaping of America’s electric grid', 'Small businesses look for relief in a high-cost summer', 'The next generation of public libraries is taking shape', 'Cities experiment with a more measured housing response', 'A court decision sends agencies back to the drawing board']],
+      ['Valencia', 'News', ['Valencia’s waterfront calendar fills up for August', 'A new neighborhood market gives local makers a larger stage', 'Transit planners publish the next phase of the green corridor', 'The city’s late-night culture gets a fresh set of proposals', 'A familiar Turia route becomes a case study in shade']],
+      ['Spain', 'News', ['Spain’s regions negotiate the next energy chapter', 'A tourism economy searches for a more balanced rhythm', 'The summer housing conversation moves beyond the coast', 'A new research partnership connects Madrid and Barcelona', 'Local elections turn attention to everyday infrastructure']],
+      ['European Union', 'News', ['Brussels sketches a more flexible industrial policy', 'EU digital rules reach the messy middle of implementation', 'Member states debate a common approach to heat resilience', 'A new rail map promises fewer gaps between capitals', 'Europe’s creative economy asks for a larger seat at the table']],
+      ['NBA', 'Sports', ['The free-agency dominoes that could move the West', 'Three young cores quietly enter the conversation', 'What the new TV calendar changes for fans', 'The best defensive experiments from last season', 'A summer league signal worth watching']],
+      ['EuroLeague', 'Sports', ['EuroLeague clubs build for a longer, tougher season', 'The guards changing the geometry of the half court', 'A coaching carousel settles into its final shape', 'Travel and scheduling become competitive advantages', 'The next wave of European prospects gets a runway']],
+      ['Spanish basketball', 'Sports', ['ACB teams turn to continuity in a volatile market', 'Valencia Basket’s summer plan comes into focus', 'The league’s best young bigs are asking new questions', 'A schedule tweak could change the race for home court', 'Spanish basketball’s next generation finds its voice']],
+      ['Formula 1', 'Sports', ['The paddock’s biggest question is still tire management', 'A midfield upgrade changes the weekend pecking order', 'The calendar’s tightest stretch is almost here', 'Engine departments search for the final tenth', 'What the data says after a messy Friday session']],
+      ['IndyCar', 'Sports', ['A street-circuit weekend rewards patience again', 'The championship fight is becoming a two-lane race', 'Pit strategy gives one team a clean opening', 'Rookies find speed in the details', 'The next oval test will expose the real balance']],
+      ['NFL', 'Sports', ['Training camp questions that will survive into August', 'The league’s new offensive vocabulary spreads', 'A defensive secondary becomes a team’s hinge point', 'The schedule creates an early stress test', 'What a quiet offseason can reveal']],
+      ['College football', 'Sports', ['Ohio State opens camp with a deeper question at receiver', 'The expanded playoff changes the value of September', 'Big Ten contenders sharpen their edges', 'A young quarterback class has room to surprise', 'The transfer portal’s second-order effects']],
+      ['MLS', 'Sports', ['The summer window gives MLS a new kind of urgency', 'Columbus Crew look for a sharper final third', 'Three academy products are ready for larger roles', 'The Western Conference race stays compressed', 'What the new roster rules mean in practice']],
+      ['La Liga', 'Sports', ['Real Madrid’s midfield puzzle has another piece', 'A new season’s title race starts with depth', 'The league’s young fullbacks are changing the tempo', 'A tactical trend travels from training ground to pitch', 'The most important business is happening off camera']],
+      ['Premier League', 'Sports', ['Manchester City tune the machine for another long run', 'The table may be decided by the quiet matches', 'A new manager inherits a very specific problem', 'Recruitment departments target versatility', 'The opening month’s schedule hides a few traps']],
+      ['Ohio State football', 'Followed club', ['Ohio State’s camp identity is starting to emerge', 'A veteran defensive leader sets the summer tone', 'The Buckeyes’ schedule has no soft landing', 'The freshman class brings a different kind of speed', 'One position battle could define the fall']],
+      ['Manchester City', 'Followed club', ['City’s midfield rotations are the summer’s tell', 'A wide player gets a new brief in possession', 'The club’s academy pathway keeps widening', 'Preseason minutes hint at the next formation', 'The title defense begins with small decisions']],
+      ['Real Madrid', 'Followed club', ['Madrid’s next era starts with familiar standards', 'A young star earns a bigger part in the plan', 'The squad’s depth changes the manager’s options', 'A preseason detail worth filing away', 'The club’s long view meets a short summer']],
+      ['Valencia Basket', 'Followed club', ['Valencia Basket set a steady course for the new season', 'A new backcourt pairing promises more pace', 'La Fonteta’s atmosphere remains an advantage', 'The club invests in continuity and flexibility', 'A European calendar asks for a deeper rotation']],
+      ['Columbus Crew', 'Followed club', ['Columbus Crew build another run through the middle', 'The Crew’s press gets a new wrinkle', 'A homegrown player pushes for more minutes', 'The summer window rewards a patient approach', 'Lower.com Field prepares for another full house']],
+      ['Valencia social calendar', 'Events', ['A late-summer concert series turns the park into a stage', 'Three new restaurant openings to put on the list', 'A neighborhood festival keeps its local texture', 'The best small exhibitions to see this week', 'A Sunday market makes a case for an early start']],
+      ['EU video-game events', 'Events', ['The next European game convention calendar is taking shape', 'Indie showcases give small studios a bigger room', 'A speedrunning weekend brings the community together', 'The year’s most interesting esports experiments', 'A design conference asks what play looks like next']],
+    ];
+
+    edition.sections = definitions.map(([name, type, titles], sectionIndex) => ({
+      name, type, id: slug(name),
+      intro: introFor(name, type),
+      cards: titles.map((title, index) => makeCard(title, name, type, sectionIndex, index))
+    }));
+
+    function slug(value) { return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+    function introFor(name, type) {
+      if (type === 'News') return `Five carefully chosen signals from ${name.toLowerCase()}.`;
+      if (type === 'Followed club') return `A closer look at a club worth keeping in view.`;
+      return `Five things to put on the radar in ${name.toLowerCase()}.`;
+    }
+    function makeCard(title, section, type, sectionIndex, index) {
+      const sources = [
+        { label: 'Primary / official', name: `${section} desk note`, url: 'https://example.com/primary' },
+        { label: index % 2 ? 'Progressive / analysis' : 'Neutral / reporting', name: 'Correspondent brief', url: 'https://example.com/brief' },
+        { label: index % 3 ? 'Conservative / analysis' : 'Data / context', name: 'Context file', url: 'https://example.com/context' }
+      ];
+      return {
+        id: `${slug(section)}-${index}`,
+        title,
+        section,
+        type,
+        summary: `Mock reporting for ${section}: this card tests how a concise, attributed summary might read before live sourcing is connected.`,
+        detail: [`The editorial desk is tracking this as a useful signal rather than a definitive turning point. The first pass separates what is directly reported from what still needs corroboration.`, `The immediate development is only one part of the story. A useful edition should show what changed, what did not change, and which older assumptions are now being tested by the new information.`, `That context matters because early headlines often compress several different kinds of evidence into one sentence. In the finished report, the editor would preserve the distinction between a verified fact, an attributed claim, and a reasonable interpretation.`, `The likely next step is a second reporting pass: compare the primary account with independent coverage, look for material disagreements, and update the confidence label if the evidence becomes thinner or stronger.`, `This prototype deliberately keeps the evidence trail visible: readers can see the source mix, confidence label, and the reason the item made the edition. The goal is a story that feels useful without pretending that uncertainty has disappeared.`],
+        why: index === 0 ? 'Lead signal for this section.' : 'Adds a distinct angle or development to the section.',
+        status: index === 0 ? 'Developing' : index === 1 ? 'Verified' : 'Watching',
+        confidence: index < 2 ? 'High' : 'Medium',
+        timestamp: `${index + 1}h ago`,
+        sources
+      };
+    }
+
+    const layouts = { a: 'A · Broadsheet', b: 'B · Editor’s desk', c: 'C · Daily briefing' };
+    const params = new URLSearchParams(location.search);
+    let activeVariant = layouts[params.get('variant')] ? params.get('variant') : 'a';
+    let activeTheme = localStorage.getItem('daily-report-theme') || 'light';
+    let navMode = 'scroll';
+    let activeFilter = 'all';
+    document.documentElement.dataset.theme = activeTheme;
+
+    function navLinks() {
+      return `<a href="#news" data-nav-target="all">Today</a><a href="#sports" data-nav-target="sports">Sports</a><a href="#events" data-nav-target="events">Events</a><a href="#weekly" data-nav-target="weekly">Week</a><a href="#monthly" data-nav-target="monthly">Month</a>`;
+    }
+
+    function shiftDate(dateISO, offset) {
+      const date = new Date(`${dateISO}T12:00:00Z`);
+      date.setUTCDate(date.getUTCDate() + offset);
+      return date.toISOString().slice(0, 10);
+    }
+
+    function archiveHref(dateISO) {
+      return location.pathname.includes('/editions/') ? `${dateISO}.html` : `editions/${dateISO}.html`;
+    }
+
+    function editionDateNav() {
+      const previousDate = shiftDate(edition.dateISO, -1);
+      return `<div class="edition-date-nav" aria-label="Edition date navigation"><a href="${archiveHref(previousDate)}" aria-label="Previous edition">←</a><span class="dateline">${edition.date}</span><span class="edition-arrow disabled" aria-label="Latest edition">→</span></div>`;
+    }
+
+    function navModeMarkup() {
+      return `<div class="nav-mode" aria-label="Navigation mode"><span class="nav-mode-label">View</span><button type="button" data-nav-mode="scroll" aria-pressed="true">Scroll</button><button type="button" data-nav-mode="filter" aria-pressed="false">Filter</button></div>`;
+    }
+
+    function header() {
+      return `<header class="masthead">
+        <div class="masthead-top">
+          <span class="dateline">${edition.edition} · ${edition.time}</span>
+          ${editionDateNav()}
+          <span class="eyebrow">No. 001 / Mock data</span>
+        </div>
+        <div class="forecast" aria-label="Today and seven-day forecast">
+          <div class="forecast-today"><span class="forecast-icon">🌤️</span><div><div class="eyebrow">Today in Valencia</div><div class="forecast-temp">29° / 21°</div><div class="forecast-copy">Mostly sunny · light sea breeze</div></div></div>
+          <div class="forecast-strip">${edition.forecast.map(([day, icon, temp, condition]) => `<div class="forecast-day"><span class="forecast-icon">${icon}</span><div class="eyebrow">${day}</div><strong>${temp}</strong><div class="forecast-copy">${condition}</div></div>`).join('')}</div>
+        </div>
+      </header><div class="sticky-header"><a class="sticky-logo" href="#top">The Daily Report</a><nav class="sticky-nav" aria-label="Sticky edition navigation">${navLinks()}</nav>${navModeMarkup()}<button class="icon-btn sticky-theme" type="button" data-theme aria-label="Toggle light and dark mode">${activeTheme === 'light' ? '☾' : '☼'}</button></div>`;
+    }
+
+    function cardMarkup(card) {
+      return `<article class="card" tabindex="0" role="button" data-card-id="${card.id}">
+        <span class="tag">${card.type} · ${card.section}</span>
+        <h3>${card.title}</h3>
+        <p>${card.summary}</p>
+        <div class="story-meta"><span class="signal">${card.status}</span><span>${card.timestamp} · ${card.confidence} confidence</span></div>
+      </article>`;
+    }
+
+    function sectionMarkup(section) {
+      return `<section class="section" id="${section.id}">
+        <div class="section-heading"><div><h2>${section.name}</h2><p>${section.intro}</p></div><span class="count">05 cards</span></div>
+        <div class="card-rail">${section.cards.map(cardMarkup).join('')}</div>
+      </section>`;
+    }
+
+    function rollupMarkup(hero = false) {
+      return `<section class="rollup${hero ? ' hero-rollup' : ''}" id="weekly"><div class="eyebrow">The midnight desk &middot; Editor&apos;s rollup</div>${hero ? `<div class="rollup-layout"><div class="rollup-main"><h1>Twenty-five minutes of useful context.</h1><p>${edition.newsRollup}</p></div><div class="rollup-cards"><article class="rollup-summary"><div class="eyebrow">News summary</div><h3>News in one sitting</h3><p>${edition.newsRollup}</p></article><article class="rollup-summary"><div class="eyebrow">Sports summary</div><h3>Sports in one sitting</h3><p>${edition.sportsRollup}</p></article></div><div class="rollup-pulse"><div class="eyebrow">Edition pulse</div><div class="rollup-pulse-items"><span><strong>23</strong> desks</span><span><strong>115</strong> mock cards</span><span><strong>3</strong> source types</span><span><strong>0</strong> live claims</span></div></div></div>` : ''}${hero ? '' : `<div class="rollup-grid"><div><h3>News in one sitting</h3><p>${edition.newsRollup}</p></div><div><h3>Sports in one sitting</h3><p>${edition.sportsRollup}</p></div></div>`}</section>`;
+    }
+
+    function footer() {
+      return `<footer class="footer"><div class="footer-line"><span>THE DAILY REPORT · STATIC EDITION</span><span>Generated for pipeline validation · mock sources only</span></div></footer>`;
+    }
+
+    function variantA() {
+      const news = edition.sections.filter(s => s.type === 'News');
+      const sports = edition.sections.filter(s => s.type === 'Sports' || s.type === 'Followed club');
+      const events = edition.sections.filter(s => s.type === 'Events');
+      return `<div class="shell edition-a" id="top">${header()}${rollupMarkup(true)}<div id="news" data-content-group="news">${news.map(sectionMarkup).join('')}</div><div id="sports" data-content-group="sports">${sports.map(sectionMarkup).join('')}</div><div id="events" data-content-group="events">${events.map(sectionMarkup).join('')}</div>${footer()}</div>`;
+    }
+
+    function variantB() {
+      const news = edition.sections.filter(s => s.type === 'News');
+      const sports = edition.sections.filter(s => s.type === 'Sports' || s.type === 'Followed club');
+      const events = edition.sections.filter(s => s.type === 'Events');
+      return `<div class="shell edition-b" id="top">${header()}<aside class="desk-rail"><h2>Desk index</h2><nav class="desk-nav">${edition.sections.map(section => `<a href="#${section.id}">${section.name}<span>05</span></a>`).join('')}</nav><div class="desk-note"><div class="eyebrow">Editor’s note</div><p>A denser view for readers who want the whole report on one screen and the ability to scan by desk.</p></div></aside><div class="desk-main"><div class="desk-lead"><div><div class="eyebrow">The midnight desk</div><h1>Twenty-five minutes of useful context.</h1><p>${edition.newsRollup}</p></div><div class="desk-pulse"><div class="eyebrow">Edition pulse</div><strong>23 desks</strong><p>115 mock cards · 3 source types · 0 live claims</p></div></div><div id="news" data-content-group="news">${news.map(sectionMarkup).join('')}</div><div id="sports" data-content-group="sports">${sports.map(sectionMarkup).join('')}</div><div id="events" data-content-group="events">${events.map(sectionMarkup).join('')}</div>${rollupMarkup()}${footer()}</div></div>`;
+    }
+
+    function variantC() {
+      const news = edition.sections.filter(s => s.type === 'News');
+      const sports = edition.sections.filter(s => s.type === 'Sports' || s.type === 'Followed club');
+      const events = edition.sections.filter(s => s.type === 'Events');
+      return `<div class="shell edition-c" id="top">${header()}<div class="briefing-intro"><div><div class="eyebrow">Saturday briefing</div><h1>Start with the signal.</h1></div><p>Summary first, then the evidence. This version is designed for a fast morning read on a phone or a narrow laptop window.</p></div><div class="briefing-list" id="news" data-content-group="news">${news.map(sectionMarkup).join('')}</div><div class="briefing-list" id="sports" data-content-group="sports">${sports.map(sectionMarkup).join('')}</div><div class="briefing-list" id="events" data-content-group="events">${events.map(sectionMarkup).join('')}</div>${rollupMarkup()}${footer()}</div>`;
+    }
+
+    function render() {
+      document.getElementById('app').innerHTML = activeVariant === 'a' ? variantA() : activeVariant === 'b' ? variantB() : variantC();
+      document.getElementById('switcherLabel').textContent = layouts[activeVariant];
+      bindInteractions();
+    }
+
+    function openCard(id) {
+      const card = edition.sections.flatMap(section => section.cards).find(item => item.id === id);
+      if (!card) return;
+      document.getElementById('modal').innerHTML = `<div class="detail-top"><span class="eyebrow">${card.type} · ${card.section}</span><button class="icon-btn" type="button" data-close aria-label="Close story">×</button></div><h2>${card.title}</h2><p class="modal-summary">${card.summary}</p><div class="evidence"><div><span class="eyebrow">Status</span><strong>${card.status}</strong></div><div><span class="eyebrow">Confidence</span><strong>${card.confidence}</strong></div><div><span class="eyebrow">Why here</span><strong>${card.why}</strong></div></div><div class="modal-copy">${card.detail.map(paragraph => `<p>${paragraph}</p>`).join('')}</div><div class="sources"><div class="eyebrow">Bibliography / source mix</div>${card.sources.map(source => `<a href="${source.url}" target="_blank" rel="noreferrer" onclick="event.preventDefault(); showToast('Mock source link — connect live sourcing later.');">${source.label} · ${source.name} ↗</a>`).join('')}</div><div class="feedback"><span>Was this useful or accurate?</span><button class="text-btn" type="button" data-feedback="up">Thumbs up</button><button class="text-btn" type="button" data-feedback="down">Thumbs down</button></div>`;
+      document.getElementById('modalBackdrop').classList.add('open');
+    }
+
+    function closeModal() { document.getElementById('modalBackdrop').classList.remove('open'); }
+    function showToast(message) { const toast = document.getElementById('toast'); toast.textContent = message; toast.classList.add('show'); clearTimeout(showToast.timer); showToast.timer = setTimeout(() => toast.classList.remove('show'), 2400); }
+    function applyNavigation() {
+      document.querySelectorAll('[data-content-group]').forEach(group => {
+        group.hidden = navMode === 'filter' && activeFilter !== 'all' && group.dataset.contentGroup !== activeFilter;
+      });
+      document.querySelectorAll('[data-nav-mode]').forEach(button => {
+        const isActive = button.dataset.navMode === navMode;
+        button.classList.toggle('active', isActive);
+        button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      });
+      document.querySelectorAll('[data-nav-target]').forEach(link => {
+        link.classList.toggle('active', navMode === 'filter' && link.dataset.navTarget === activeFilter);
+      });
+    }
+    function handleNavigation(link, event) {
+      const target = link.dataset.navTarget;
+      if (navMode === 'filter') {
+        event.preventDefault();
+        if (['all', 'news', 'sports', 'events'].includes(target)) {
+          activeFilter = target;
+          applyNavigation();
+          if (target === 'all') window.scrollTo({ top: 0, behavior: 'smooth' });
+          else document.getElementById(target)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else if (target === 'weekly') {
+          activeFilter = 'all';
+          applyNavigation();
+          document.getElementById('weekly')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } else {
+          showToast('Monthly summary is mocked for now.');
+        }
+      } else if (target === 'monthly') {
+        event.preventDefault();
+        showToast('Monthly summary is mocked for now.');
+      }
+    }
+    function bindInteractions() {
+      document.querySelectorAll('[data-card-id]').forEach(card => { card.addEventListener('click', () => openCard(card.dataset.cardId)); card.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openCard(card.dataset.cardId); } }); });
+      document.querySelectorAll('[data-theme]').forEach(button => button.addEventListener('click', () => { activeTheme = activeTheme === 'light' ? 'dark' : 'light'; document.documentElement.dataset.theme = activeTheme; localStorage.setItem('daily-report-theme', activeTheme); render(); }));
+      document.querySelectorAll('[data-nav-mode]').forEach(button => button.addEventListener('click', () => { navMode = button.dataset.navMode; if (navMode === 'scroll') activeFilter = 'all'; applyNavigation(); }));
+      document.querySelectorAll('[data-nav-target]').forEach(link => link.addEventListener('click', event => handleNavigation(link, event)));
+      applyNavigation();
+    }
+
+    document.querySelector('[data-switch="prev"]').addEventListener('click', () => switchVariant(-1));
+    document.querySelector('[data-switch="next"]').addEventListener('click', () => switchVariant(1));
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeModal(); if (event.target.matches('input, textarea, [contenteditable]')) return; if (event.key === 'ArrowLeft') switchVariant(-1); if (event.key === 'ArrowRight') switchVariant(1); });
+    document.getElementById('modalBackdrop').addEventListener('click', event => { if (event.target.id === 'modalBackdrop') closeModal(); });
+    document.getElementById('modal').addEventListener('click', event => { if (event.target.matches('[data-close]')) closeModal(); if (event.target.matches('[data-feedback]')) showToast(event.target.dataset.feedback === 'up' ? 'Saved: useful / accurate.' : 'Saved: needs review.'); });
+    function switchVariant(direction) { const keys = Object.keys(layouts); activeVariant = keys[(keys.indexOf(activeVariant) + direction + keys.length) % keys.length]; history.replaceState(null, '', `?variant=${activeVariant}`); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    render();
+  </script>
+</body>
+</html>
