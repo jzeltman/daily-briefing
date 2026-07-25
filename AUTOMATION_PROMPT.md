@@ -10,9 +10,8 @@ The report is fully AI-generated. Do not wait for human review, but do not turn 
 
 ## Schedule and coverage window
 
-- Run twice daily at 00:00 and 12:00 in `Europe/Madrid`.
-- The noon edition is the canonical **“yesterday”** edition for its calendar date. When the next midnight edition is rendered, its Previous edition link must point to that noon edition—the report that closes the prior day's coverage—not to the prior midnight edition or to a date-only guess.
-- Keep this rule explicit in the run manifest and edition data: `yesterdayEdition` is the noon report linked by the following midnight report. Date navigation must prefer that explicit edition reference over `shiftDate()` when both daily editions exist.
+- Run once daily at 10:00 in `Europe/Madrid`.
+- Each run produces the single canonical edition for its calendar date. Its Previous edition link should target the most recent archived daily edition.
 - Create a unique `run_id` for every run.
 - Determine the coverage window from the previous successful scheduled run to the current run.
 - Include a small amount of context from before the window when it is necessary to explain an ongoing story.
@@ -164,7 +163,7 @@ Before replacing the live root page:
 2. Save that unchanged file as `editions/YYYY-MM-DD.html` using the date found in the old edition.
 3. Render the new edition from `template.html` with the finalized data.
 4. Write the new edition to the root `index.html`.
-5. Set the new page’s previous link to the explicit prior edition. For a midnight edition, that is the noon edition that becomes “yesterday.” Disable or omit its next link because it is the latest edition.
+5. Set the new page’s previous link to the most recent archived daily edition. Disable or omit its next link because it is the latest edition.
 
 The printer must preserve:
 
@@ -187,7 +186,7 @@ Return a machine-readable manifest containing:
 - reporter assignments and completion status
 - candidate counts and rejection counts per assignment
 - final card counts per section
-- explicit `yesterdayEdition`/previous-edition reference used by the current page
+- explicit `previousEdition` reference used by the current page
 - unresolved conflicts and low-confidence items
 - rollup completion status
 - output path

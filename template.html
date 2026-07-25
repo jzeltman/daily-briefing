@@ -54,11 +54,15 @@
     .masthead-top, .section-heading, .story-meta, .detail-top, .footer-line { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .masthead-top { position: relative; border-bottom: 1px solid var(--rule); padding-bottom: 14px; }
     .dateline { font: 700 10px var(--sans); letter-spacing: .14em; text-transform: uppercase; }
-    .edition-date-nav { position: absolute; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 12px; white-space: nowrap; }
+    .edition-date-nav { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
     .edition-date-nav a, .editionrrow { color: var(--muted); font: 700 15px/1 var(--sans); }
     .edition-date-nav a:hover { color: var(--accent); }
     .editionrrow.disabled { color: var(--faint); }
-    .sticky-header { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 22px; min-height: 48px; padding: 9px 0; border-bottom: 1px solid var(--rule); background: var(--paper); }
+    .sticky-header { position: sticky; top: 0; z-index: 20; display: grid; gap: 8px; padding: 9px 0; border-bottom: 1px solid var(--rule); background: var(--paper); }
+    .sticky-header-top, .sticky-header-nav-row { display: flex; align-items: center; gap: 22px; min-width: 0; }
+    .sticky-header-nav-row { gap: 16px; padding-top: 8px; border-top: 1px solid var(--rule); }
+    .sticky-header-nav-row .sticky-nav { flex: 1 1 auto; }
+    .sticky-header-nav-row .edition-date-nav { margin-left: auto; }
     .sticky-logo { flex: 0 0 auto; font-size: 22px; font-weight: 500; letter-spacing: -.045em; white-space: nowrap; }
     .sticky-logo:hover, .sticky-nav a:hover { color: var(--accent); }
     .sticky-nav { display: flex; align-items: center; gap: 15px; min-width: 0; overflow-x: auto; font: 11px var(--sans); }
@@ -69,7 +73,7 @@
     .nav-mode button { padding: 5px 8px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); cursor: pointer; font: 700 10px var(--sans); }
     .nav-mode button.active, .nav-mode button:hover { background: var(--ink); color: var(--paper); }
     [data-content-group][hidden] { display: none; }
-    #news, #sports, #teams, #events, #weekly { scroll-margin-top: 70px; }
+    #news, #sports, #teams, #events, #weekly { scroll-margin-top: 112px; }
     .forecast { display: grid; grid-template-columns: 1.15fr 2.85fr; gap: 14px; margin-top: 0; padding-top: 14px; border-top: 0; }
     .forecast-today, .forecast-day { min-height: 74px; padding: 10px 12px; background: var(--wash); }
     .forecast-today { display: flex; align-items: center; gap: 12px; }
@@ -87,8 +91,6 @@
     .section { margin: 42px 0 0; }
     .section-heading { margin-bottom: 14px; }
     .section-heading h2 { margin: 0; font-size: 26px; font-weight: 500; letter-spacing: -.03em; }
-    .section-heading p { margin: 5px 0 0; color: var(--muted); font: 11px var(--sans); }
-    .count { color: var(--muted); font: 11px var(--sans); }
     .card-rail { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(220px, 1fr); gap: 12px; overflow-x: auto; padding: 3px 2px 10px; scroll-snap-type: x mandatory; }
     .card { min-height: 235px; padding: 17px; background: var(--card); border: 1px solid var(--rule); border-top: 3px solid var(--ink); display: flex; flex-direction: column; cursor: pointer; scroll-snap-align: start; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
     .card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: var(--shadow); }
@@ -141,12 +143,21 @@
       .shell { width: min(100% - 24px, 640px); }
       .masthead { padding-top: 40px; }
       .masthead-top { align-items: flex-start; }
-      .edition-date-nav { position: static; order: 3; flex-basis: 100%; justify-content: center; transform: none; margin-top: 8px; }
-      .sticky-header { flex-wrap: wrap; gap: 9px 14px; }
-      .sticky-nav { order: 3; flex-basis: 100%; padding-bottom: 2px; }
+      .masthead-top { display: none; }
+      .sticky-header-top, .sticky-header-nav-row { gap: 10px; }
+      .sticky-header-nav-row .edition-date-nav { gap: 7px; }
+      .sticky-header-nav-row .edition-date-nav .dateline { font-size: 9px; letter-spacing: .08em; }
+      .sticky-nav { padding-bottom: 2px; }
       .nav-mode { margin-left: auto; }
-      .forecast { display: block; }
-      .forecast-strip { margin-top: 8px; padding-bottom: 3px; }
+      .forecast { display: flex; gap: 6px; overflow-x: auto; padding-top: 10px; }
+      .forecast-today { flex: 0 0 145px; min-height: 58px; padding: 7px 8px; }
+      .forecast-today .forecast-icon { font-size: 21px; }
+      .forecast-today .forecast-temp { font-size: 16px; }
+      .forecast-today .forecast-copy, .forecast-day .forecast-copy { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .forecast-strip { display: flex; flex: 0 0 auto; gap: 6px; overflow: visible; padding-bottom: 0; }
+      .forecast-day { flex: 0 0 70px; min-width: 70px; min-height: 58px; padding: 7px 8px; }
+      .forecast-day strong { margin: 5px 0 2px; font-size: 13px; }
+      .forecast-day .forecast-icon { font-size: 16px; }
       .evidence { grid-template-columns: 1fr; }
       .rollup-layout { display: block; }
       .rollup-cards { margin-top: 22px; }
@@ -167,8 +178,7 @@
     const edition = {
       date: 'Saturday, July 25, 2026',
       dateISO: '2026-07-25',
-      edition: 'Midnight edition',
-      time: '00:00 CEST',
+      time: '10:00 CEST',
       lead: 'A calm, useful read for the stories that shape your day.',
       newsRollup: 'A quick tour of the major currents: diplomacy is moving in small increments, Ohio is balancing growth with pressure on local systems, and Valencia is leaning into a busy cultural summer.',
       sportsRollup: 'The sports desk is watching the long season take shape: roster decisions, early form, and the small signals that become much bigger stories by autumn.',
@@ -264,7 +274,7 @@
 
     function editionDateNav() {
       const previousDate = shiftDate(edition.dateISO, -1);
-      return `<div class="edition-date-nav" aria-label="Edition date navigation"><a href="${archiveHref(previousDate)}" aria-label="Previous edition">←</a><span class="dateline">${edition.date}</span><span class="editionrrow disabled" aria-label="Latest edition">→</span></div>`;
+      return `<div class="edition-date-nav" aria-label="Edition date navigation"><a href="${archiveHref(previousDate)}" aria-label="Previous edition">&larr;</a><span class="dateline">${edition.date} &middot; ${edition.time}</span><span class="editionrrow disabled" aria-label="Latest edition">&rarr;</span></div>`;
     }
 
     function navModeMarkup() {
@@ -273,16 +283,12 @@
 
     function header() {
       return `<header class="masthead">
-        <div class="masthead-top">
-          <span class="dateline">${edition.edition} · ${edition.time}</span>
-          ${editionDateNav()}
-          <span class="eyebrow">No. 001 / Mock data</span>
-        </div>
+        <div class="masthead-top"><span class="eyebrow masthead-eyebrow">No. 001 / Mock data</span></div>
         <div class="forecast" aria-label="Today and seven-day forecast">
           <div class="forecast-today"><span class="forecast-icon">🌤️</span><div><div class="eyebrow">Today in Valencia</div><div class="forecast-temp">29° / 21°</div><div class="forecast-copy">Mostly sunny · light sea breeze</div></div></div>
           <div class="forecast-strip">${edition.forecast.map(([day, icon, temp, condition]) => `<div class="forecast-day"><span class="forecast-icon">${icon}</span><div class="eyebrow">${day}</div><strong>${temp}</strong><div class="forecast-copy">${condition}</div></div>`).join('')}</div>
         </div>
-      </header><div class="sticky-header"><a class="sticky-logo" href="#top">The Daily Report</a><nav class="sticky-nav" aria-label="Sticky edition navigation">${navLinks()}</nav>${navModeMarkup()}<button class="icon-btn sticky-theme" type="button" data-theme-toggle aria-label="Toggle light and dark mode">${activeTheme === 'light' ? '☾' : '☼'}</button></div>`;
+      </header><div class="sticky-header"><div class="sticky-header-top"><a class="sticky-logo" href="#top">The Daily Report</a>${navModeMarkup()}<button class="icon-btn sticky-theme" type="button" data-theme-toggle aria-label="Toggle light and dark mode">${activeTheme === 'light' ? '☾' : '☼'}</button></div><div class="sticky-header-nav-row"><nav class="sticky-nav" aria-label="Sticky edition navigation">${navLinks()}</nav>${editionDateNav()}</div></div>`;
     }
 
     function cardMarkup(card) {
@@ -296,7 +302,7 @@
 
     function sectionMarkup(section) {
       return `<section class="section" id="${section.id}">
-        <div class="section-heading"><div><h2>${section.name}</h2><p>${section.intro}</p></div><span class="count">05 cards</span></div>
+        <div class="section-heading"><h2>${section.name}</h2></div>
         <div class="card-rail">${section.cards.map(cardMarkup).join('')}</div>
       </section>`;
     }
