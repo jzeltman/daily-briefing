@@ -51,8 +51,7 @@
 
     /* Shared chrome */
     .masthead { padding: 30px 0 18px; border-bottom: 3px double var(--ink); }
-    .masthead-top, .section-heading, .story-meta, .detail-top, .footer-line { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .masthead-top { position: relative; border-bottom: 1px solid var(--rule); padding-bottom: 14px; }
+    .section-heading, .story-meta, .detail-top, .footer-line { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
     .dateline { font: 700 10px var(--sans); letter-spacing: .14em; text-transform: uppercase; }
     .edition-date-nav { display: flex; align-items: center; gap: 12px; white-space: nowrap; }
     .edition-date-nav a, .editionrrow { color: var(--muted); font: 700 15px/1 var(--sans); }
@@ -112,6 +111,7 @@
     .rollup-summary h3 { margin: 6px 0 7px; font-size: 25px; font-weight: 500; }
     .rollup-summary p { font-size: 14px; line-height: 1.4; }
     .rollup-pulse { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 20px; padding-top: 16px; border-top: 1px solid var(--rule); }
+    .rollup-pulse-source { margin-left: auto; color: var(--muted); font: 700 10px var(--sans); letter-spacing: .12em; text-transform: uppercase; }
     .rollup-pulse-items { display: flex; flex-wrap: wrap; gap: 18px; color: var(--muted); font: 11px var(--sans); }
     .rollup-pulse-items strong { margin-right: 4px; color: var(--ink); font: 500 17px var(--serif); }
     .footer { margin: 65px 0 130px; padding-top: 14px; border-top: 1px solid var(--rule); color: var(--muted); font: 10px var(--sans); }
@@ -143,7 +143,6 @@
       .shell { width: min(100% - 24px, 640px); }
       .masthead { padding-top: 40px; }
       .masthead-top { align-items: flex-start; }
-      .masthead-top { display: none; }
       .sticky-header-top, .sticky-header-nav-row { gap: 10px; }
       .sticky-header-nav-row .edition-date-nav { gap: 7px; }
       .sticky-header-nav-row .edition-date-nav .dateline { font-size: 9px; letter-spacing: .08em; }
@@ -162,6 +161,7 @@
       .rollup-layout { display: block; }
       .rollup-cards { margin-top: 22px; }
       .rollup-pulse { display: block; }
+      .rollup-pulse-source { margin: 10px 0 0; }
       .rollup-pulse-items { margin-top: 10px; }
     }
   </style>
@@ -283,7 +283,6 @@
 
     function header() {
       return `<header class="masthead">
-        <div class="masthead-top"><span class="eyebrow masthead-eyebrow">No. 001 / Mock data</span></div>
         <div class="forecast" aria-label="Today and seven-day forecast">
           <div class="forecast-today"><span class="forecast-icon">🌤️</span><div><div class="eyebrow">Today in Valencia</div><div class="forecast-temp">29° / 21°</div><div class="forecast-copy">Mostly sunny · light sea breeze</div></div></div>
           <div class="forecast-strip">${edition.forecast.map(([day, icon, temp, condition]) => `<div class="forecast-day"><span class="forecast-icon">${icon}</span><div class="eyebrow">${day}</div><strong>${temp}</strong><div class="forecast-copy">${condition}</div></div>`).join('')}</div>
@@ -308,7 +307,7 @@
     }
 
     function rollupMarkup(hero = false) {
-      return `<section class="rollup${hero ? ' hero-rollup' : ''}" id="weekly"><div class="eyebrow">The midnight desk &middot; Editor&apos;s rollup</div>${hero ? `<div class="rollup-layout"><div class="rollup-main"><h1>Twenty-five minutes of useful context.</h1><p>${edition.newsRollup}</p></div><div class="rollup-cards"><article class="rollup-summary"><div class="eyebrow">News summary</div><h3>News in one sitting</h3><p>${edition.newsRollup}</p></article><article class="rollup-summary"><div class="eyebrow">Sports summary</div><h3>Sports in one sitting</h3><p>${edition.sportsRollup}</p></article></div><div class="rollup-pulse"><div class="eyebrow">Edition pulse</div><div class="rollup-pulse-items"><span><strong>23</strong> desks</span><span><strong>115</strong> mock cards</span><span><strong>3</strong> source types</span><span><strong>0</strong> live claims</span></div></div></div>` : ''}${hero ? '' : `<div class="rollup-grid"><div><h3>News in one sitting</h3><p>${edition.newsRollup}</p></div><div><h3>Sports in one sitting</h3><p>${edition.sportsRollup}</p></div></div>`}</section>`;
+      return `<section class="rollup${hero ? ' hero-rollup' : ''}" id="weekly"><div class="eyebrow">The midnight desk &middot; Editor&apos;s rollup</div>${hero ? `<div class="rollup-layout"><div class="rollup-main"><h1>Twenty-five minutes of useful context.</h1><p>${edition.newsRollup}</p></div><div class="rollup-cards"><article class="rollup-summary"><div class="eyebrow">News summary</div><h3>News in one sitting</h3><p>${edition.newsRollup}</p></article><article class="rollup-summary"><div class="eyebrow">Sports summary</div><h3>Sports in one sitting</h3><p>${edition.sportsRollup}</p></article></div><div class="rollup-pulse"><div class="eyebrow">Edition pulse</div><div class="rollup-pulse-items"><span><strong>23</strong> desks</span><span><strong>115</strong> mock cards</span><span><strong>3</strong> source types</span><span><strong>0</strong> live claims</span></div><span class="rollup-pulse-source">No. 001 / Mock data</span></div></div>` : ''}${hero ? '' : `<div class="rollup-grid"><div><h3>News in one sitting</h3><p>${edition.newsRollup}</p></div><div><h3>Sports in one sitting</h3><p>${edition.sportsRollup}</p></div></div>`}</section>`;
     }
 
     function footer() {

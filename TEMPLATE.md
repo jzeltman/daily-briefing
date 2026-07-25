@@ -40,6 +40,7 @@
      - News summary.
      - Sports summary.
    - Bottom row: smaller edition pulse spanning both columns. It is supporting metadata, not a lead story.
+   - Keep the compact source-status label on the right side of the edition pulse row; do not give it a separate masthead row.
    - Finish the rollup with the newspaper-style double border.
 
 4. Content groups
@@ -88,6 +89,7 @@ Use the pulse as a quiet production readout, not editorial content. It may inclu
 - Number of cards generated.
 - Source mix or source count.
 - Unresolved, low-confidence, or live claims.
+- A compact source-status label aligned at the right edge of the pulse row.
 
 Do not let the pulse compete visually with the rollup headline or the News/Sports summary cards.
 
