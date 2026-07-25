@@ -6,7 +6,7 @@ The canonical visual reference is [template.html](./template.html). The generati
 
 The content-gathering and editing prompt is [AUTOMATION_PROMPT.md](./AUTOMATION_PROMPT.md). It defines the reporter assignments, source-discovery rules, candidate schema, editor pass, rollups, archiving, and run manifest.
 
-Archives belong under `editions/YYYY-MM-DD.html`. Before the automation overwrites the root page, it must copy the current `index.html` to the archive path matching the date inside that page. Then it renders the next edition from `template.html`, writes it to the root `index.html`, and updates the previous/next date links.
+Archives belong under `editions/YYYY-MM-DD.html`. The noon edition is the canonical “yesterday” report for its calendar date; the following midnight edition links back to that noon edition as its Previous edition. Before the automation overwrites the root page, it must copy the current `index.html` to the archive path matching the date inside that page. Then it renders the next edition from `template.html`, writes it to the root `index.html`, and updates the previous/next links from the explicit edition reference.
 
 Preview locally:
 

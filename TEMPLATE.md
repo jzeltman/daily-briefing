@@ -8,7 +8,9 @@
 - Start from `template.html` and replace its edition data while preserving the cleaned broadsheet structure.
 - Keep the current edition at the repository root as `index.html` so GitHub Pages serves it by default.
 - Before replacing root `index.html`, copy the existing current edition to `editions/YYYY-MM-DD.html`, using the date already inside that edition.
-- After generating the new root edition, update its previous-edition link to the latest archive and disable or omit its next-edition link because it is the newest page.
+- The noon edition is the canonical “yesterday” edition for its calendar date. The following midnight edition’s Previous link must target that noon edition, which closes the prior day’s coverage window.
+- Store the previous/yesterday edition explicitly in the generated edition data; do not infer the midnight link only by subtracting one calendar day.
+- After generating the new root edition, update its previous-edition link to that explicit prior edition and disable or omit its next-edition link because it is the newest page.
 - Use relative archive links so the same files work on GitHub Pages and in a local preview.
 - Keep the existing newspaper-inspired visual language, responsive behavior, light/dark mode, sticky header, navigation, filter mode, expandable story details, source bibliography, and feedback controls.
 - Do not replace the page with a generic dashboard, a plain article feed, or a new visual system.
@@ -19,9 +21,9 @@
 
 1. Sticky header
    - Compact `The Daily Report` logo.
-   - Today, Sports, Events, Week, and Month navigation.
+   - Today, Sports, My teams, Events, Week, and Month navigation.
    - Scroll mode: navigate to the relevant page location.
-   - Filter mode: show only the selected content group; Sports includes leagues and followed clubs.
+   - Filter mode: show only the selected content group; Sports contains generic leagues, while My teams contains followed clubs.
    - Light/dark mode toggle.
 
 2. Masthead metadata
@@ -42,7 +44,8 @@
 
 4. Content groups
    - News sections.
-   - Sports sections and followed clubs.
+   - Sports sections.
+   - My teams section for followed clubs.
    - Valencia social events and EU video-game events.
    - Preserve the five-card horizontal rail on desktop and horizontal scrolling on mobile.
 
@@ -59,7 +62,7 @@ Each scheduled generation should follow this order:
 3. Gather and edit the next edition’s content.
 4. Render the next edition using the structure in this document.
 5. Write the new edition to the root `index.html`.
-6. Set the new page’s previous link to the most recent archive and its next link to disabled/omitted.
+6. Set the new page’s previous link to the explicit prior edition. At midnight, this is the noon edition that becomes “yesterday.” Set its next link to disabled/omitted.
 7. Commit/publish the root page and the new archive file together, if publication is configured.
 
 ## Story card contract
