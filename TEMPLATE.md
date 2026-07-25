@@ -1,10 +1,11 @@
 # The Daily Report — edition template
 
-`TEMPLATE.md` is the canonical generator contract. The root `index.html` is not the template: it is always the most current edition served by GitHub Pages. The current broadsheet layout (`?variant=a`) is the approved visual reference.
+`TEMPLATE.md` is the canonical generator contract. [template.html](./template.html) is the canonical visual and interaction reference. The root `index.html` is not the template: it is always the most current edition served by GitHub Pages.
 
 ## Output contract
 
 - Generate one self-contained HTML file per edition.
+- Start from `template.html` and replace its edition data while preserving the cleaned broadsheet structure.
 - Keep the current edition at the repository root as `index.html` so GitHub Pages serves it by default.
 - Before replacing root `index.html`, copy the existing current edition to `editions/YYYY-MM-DD.html`, using the date already inside that edition.
 - After generating the new root edition, update its previous-edition link to the latest archive and disable or omit its next-edition link because it is the newest page.
