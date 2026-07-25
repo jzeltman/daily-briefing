@@ -145,6 +145,9 @@
       .shell { width: min(100% - 24px, 640px); }
       .masthead-top { align-items: flex-start; }
       .sticky-header-top, .sticky-header-nav-row { gap: 10px; }
+      .sticky-header-nav-row { display: grid; gap: 7px; }
+      .sticky-header-nav-row .sticky-nav { order: 1; width: 100%; }
+      .sticky-header-nav-row .edition-date-nav { order: 2; justify-content: center; width: 100%; margin-left: 0; }
       .sticky-header-nav-row .edition-date-nav { gap: 7px; }
       .sticky-header-nav-row .edition-date-nav .dateline { font-size: 9px; letter-spacing: .08em; }
       .sticky-nav { padding-bottom: 2px; }
@@ -159,6 +162,8 @@
       .forecast-day strong { margin: 5px 0 2px; font-size: 13px; }
       .forecast-day .forecast-icon { font-size: 16px; }
       .evidence { grid-template-columns: 1fr; }
+      .modal-backdrop { padding: 0; place-items: stretch; }
+      .modal { width: 100%; height: 100%; max-height: none; padding: 22px 16px; border: 0; }
       .rollup-layout { display: block; }
       .rollup-cards { margin-top: 22px; }
       .rollup-pulse { display: block; }
