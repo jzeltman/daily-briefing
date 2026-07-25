@@ -8,6 +8,17 @@ Act as the orchestrator for The Daily Report. Run a bounded reporter → editor 
 
 The report is fully AI-generated. Do not wait for human review, but do not turn missing evidence into invented facts.
 
+## Required reporter resources
+
+Before any reporter stage, load these repo-local resources:
+
+- `skills/daily-report-reporter/SKILL.md` — base bounded-search, evidence, and handoff rules.
+- `skills/daily-report-reporter/references/source-manifest.md` — confirmed minimum source set by assignment.
+- `skills/daily-report-reporter/references/personalities.md` — internal desk-family voice profiles.
+- `TEMPLATE.md` and `template.html` — card contract and rendering reference.
+
+Use the source manifest as the starting set, not an exclusive source allow-list. Personalities affect only voice and emphasis; they never change factual standards, source minimums, confidence, or editorial selection.
+
 ## Schedule and coverage window
 
 - Run once daily at 10:00 in `Europe/Madrid`.
@@ -30,6 +41,7 @@ Run bounded reporter stages for each assignment below. Each reporter should retu
 - Valencia, Spain news
 - Spain news
 - European Union news
+- Finance: USA two cards, EU two cards, and Asia one card in one Finance rail. For each region, produce one market-movement card and one primary-driver card where the quota calls for two; the Asia card combines movement and driver.
 
 ### Sports
 
@@ -73,6 +85,8 @@ For every assignment:
 8. For events, verify date, time, location, ticket or attendance status, and whether the event is current or already passed.
 9. Do not treat a search-result snippet, social post, single unsourced claim, or stale preview as sufficient evidence for an important card.
 10. Record publication time and, when available, the event time separately. A newly published article about an old event is not a new event.
+11. Start from the assignment's confirmed primary/official and independent sources in the source manifest. Report broken or degraded manifest sources in the run manifest.
+12. Ordinary candidates need at least two usable sources: one primary/official and one independent report. Aim for three for contested, Finance, and rumor-watch candidates.
 
 Search with several focused queries instead of one giant query. Useful query shapes include:
 
@@ -125,6 +139,8 @@ Candidate rules:
 - Use `low` confidence when the item is plausible but not adequately corroborated.
 - Record conflicts instead of silently choosing the most convenient version.
 - Reject candidates with no usable source, no clear connection to the assignment, or no meaningful change in the coverage window unless they are necessary ongoing context.
+- For Finance candidates, also return `region`, `as_of`, `instruments`, `movement`, and `drivers`; keep the copy informational with no investment recommendation.
+- A sports reporter may return at most one `Rumor watch` candidate. It must have two reputable independent reports, explicit attribution, low or medium confidence, and an uncertainty statement. Omit it when that evidence bar is not met.
 
 ## Editor stage
 
@@ -138,7 +154,7 @@ After all reporter handoffs arrive:
 6. Prefer multiple sources for important or contested stories.
 7. Reject unsupported claims, stale items presented as new, duplicate cards, and event listings that cannot be verified.
 8. Set final `status` and `confidence` after comparing the evidence, not before.
-9. Write three to seven paragraphs for each expanded card detail. The detail must explain what happened, what is known, why it matters, relevant context, and what remains uncertain.
+9. Write two to four factual paragraphs for each expanded card detail: what happened and the verified facts; why it matters; relevant context; and what happens next or remains uncertain. Do not use detail copy to defend why a card was selected.
 10. Keep the card summary shorter than the detail and suitable for scanning in the horizontal rail.
 
 The final card data must satisfy the fields and behavior in `TEMPLATE.md`.
@@ -150,6 +166,7 @@ Only after all final cards are selected:
 - Write the overall editor’s rollup for the left side of the rollup layout.
 - Write the News summary card from the finalized news cards.
 - Write the Sports summary card from the finalized sports cards.
+- Write the Finance input from its five finalized cards, preserving the USA 2 / EU 2 / Asia 1 distribution and the market-movement/primary-driver mix.
 - Keep rollups descriptive and evidence-backed; do not introduce a major claim that is absent from the final cards.
 - Produce the edition pulse from actual run metadata, not placeholder counts.
 
@@ -174,7 +191,11 @@ The printer must preserve:
 - Two-column editor’s rollup with News and Sports summary cards.
 - Full-width edition pulse below the rollup columns.
 - Five-card section rails on desktop and horizontal scrolling on mobile.
+- Finance navigation/filter group and a five-card Finance rail with region and market metadata in expanded details.
 - Expanded detail view, bibliography, source labels, confidence, uncertainty, and feedback controls.
+- Rumor-watch labeling and attribution where an evidence-qualified sports rumor card was selected.
+
+Run `node skills/daily-report-reporter/scripts/validate-handoff.cjs <handoff.json>` before printing. The validator must pass required assignments, card fields, source minimums, 2–4 detail paragraphs, Finance 2/2/1 distribution, and rumor labeling.
 
 ## Run manifest
 

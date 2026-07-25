@@ -21,7 +21,7 @@
 
 1. Sticky header
    - Compact `The Daily Report` logo.
-   - Today, Sports, My teams, Events, Week, and Month navigation.
+   - Today, Sports, Finance, My teams, Events, Week, and Month navigation.
    - Two rows: logo/view/theme controls above; section navigation with date and previous/next controls aligned right below.
    - Scroll mode: navigate to the relevant page location.
    - Filter mode: show only the selected content group; Sports contains generic leagues, while My teams contains followed clubs.
@@ -46,6 +46,7 @@
 4. Content groups
    - News sections.
    - Sports sections.
+   - Finance section: one rail containing exactly five cards, distributed USA 2, EU 2, Asia 1.
    - My teams section for followed clubs.
    - Valencia social events and EU video-game events.
    - Show only each section title, then preserve the five-card horizontal rail on desktop and horizontal scrolling on mobile.
@@ -72,7 +73,7 @@ Every card must provide:
 
 - `title`: concise headline.
 - `summary`: short card-level summary.
-- `detail`: three to seven paragraphs for the expanded view.
+- `detail`: two to four factual paragraphs for the expanded view. Use the sequence facts, why it matters, context, and next/uncertain where useful.
 - `timestamp`: when the item was reported or last checked.
 - `status`: for example, `Verified`, `Developing`, or `Watching`.
 - `confidence`: `High`, `Medium`, or `Low`, with the reason reflected in the detail copy when useful.
@@ -80,6 +81,9 @@ Every card must provide:
 - `sources`: multiple links for important or contested stories.
 - Source labels distinguishing primary/official material, reporting, analysis, data, or other relevant viewpoints.
 - Clear separation between verified facts, attributed claims, analysis, and uncertainty.
+- Normal cards need at least two sources, including one primary/official and one independent report. Contested, Finance, and rumor-watch cards should have three when practical.
+- Finance cards also provide `region`, `as_of`, `instruments`, `movement`, and `drivers`; they are informational and never investment advice.
+- A sports `Rumor watch` card must preserve attribution, use low or medium confidence, and have two reputable independent reports. Omit it when that evidence bar is not met.
 
 ## Edition pulse
 

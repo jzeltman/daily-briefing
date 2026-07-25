@@ -72,7 +72,7 @@
     .nav-mode button { padding: 5px 8px; border: 0; border-radius: 999px; background: transparent; color: var(--muted); cursor: pointer; font: 700 10px var(--sans); }
     .nav-mode button.active, .nav-mode button:hover { background: var(--ink); color: var(--paper); }
     [data-content-group][hidden] { display: none; }
-    #news, #sports, #teams, #events, #weekly { scroll-margin-top: 112px; }
+    #news, #sports, #finance, #teams, #events, #weekly { scroll-margin-top: 112px; }
     .forecast { display: grid; grid-template-columns: 1.15fr 2.85fr; gap: 14px; margin-top: 0; padding-top: 14px; border-top: 0; }
     .forecast-today, .forecast-day { min-height: 74px; padding: 10px 12px; background: var(--wash); }
     .forecast-today { display: flex; align-items: center; gap: 12px; }
@@ -94,6 +94,7 @@
     .card { min-height: 235px; padding: 17px; background: var(--card); border: 1px solid var(--rule); border-top: 3px solid var(--ink); display: flex; flex-direction: column; cursor: pointer; scroll-snap-align: start; transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
     .card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: var(--shadow); }
     .card .tag { color: var(--accent); font: 700 10px var(--sans); letter-spacing: .12em; text-transform: uppercase; }
+    .finance-region { display: block; color: var(--accent); font: 700 10px var(--sans); letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
     .card h3 { margin: 15px 0 10px; font-size: 21px; line-height: 1.05; font-weight: 500; }
     .card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.42; }
     .card .story-meta { margin-top: auto; padding-top: 17px; color: var(--muted); font: 10px var(--sans); }
@@ -126,6 +127,7 @@
     .modal { width: min(720px, 100%); max-height: min(760px, calc(100vh - 40px)); overflow: auto; padding: 27px; background: var(--paper); border: 1px solid var(--rule); box-shadow: 0 30px 100px rgba(0, 0, 0, .25); }
     .modal h2 { margin: 15px 0 12px; font-size: clamp(30px, 5vw, 52px); line-height: .95; font-weight: 500; letter-spacing: -.05em; }
     .modal-summary { color: var(--muted); font-size: 17px; line-height: 1.5; }
+    .finance-meta { margin: 14px 0; padding: 10px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); color: var(--muted); font: 12px/1.5 var(--sans); }
     .modal-copy { padding: 20px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
     .modal-copy p { margin: 0 0 12px; font-size: 16px; line-height: 1.5; }
     .modal-copy p:last-child { margin-bottom: 0; }
@@ -181,6 +183,7 @@
       lead: 'A calm, useful read for the stories that shape your day.',
       newsRollup: 'A quick tour of the major currents: diplomacy is moving in small increments, Ohio is balancing growth with pressure on local systems, and Valencia is leaning into a busy cultural summer.',
       sportsRollup: 'The sports desk is watching the long season take shape: roster decisions, early form, and the small signals that become much bigger stories by autumn.',
+      financeRollup: 'Finance is a compact market snapshot: note the direction, the as-of time, and the named driver without turning description into advice.',
       forecast: [
         ['Sun', '☀️', '31° / 22°', 'Bright'],
         ['Mon', '⛅', '30° / 21°', 'Partly cloudy'],
@@ -224,6 +227,25 @@
       intro: introFor(name, type),
       cards: titles.map((title, index) => makeCard(title, name, type, sectionIndex, index))
     }));
+    edition.sections.forEach(section => section.cards.forEach(card => {
+      card.detail = [
+        `The mock report records ${card.title.toLowerCase()} as the concrete development under review, with the card summary identifying the immediate change.`,
+        `It matters to ${card.section.toLowerCase()} because it gives the reader a specific signal to follow rather than a broad theme without evidence.`,
+        `The useful context is the relationship between this development, the assignment's schedule or institutions, and the next decision point.`,
+        `The next update should replace mock copy with verified facts, named sources, and an explicit account of what remains uncertain.`
+      ];
+    }));
+
+    edition.sections.push({
+      name: 'Finance', type: 'Finance', id: 'finance', intro: 'A broad market snapshot, with no investment advice.',
+      cards: [
+        makeFinanceCard('US equities edge higher as rate path stays in focus', 'USA', 'Market movement', ['S&P 500', 'Nasdaq Composite'], 'Indexes are modestly higher as traders reassess the next rate decision.'),
+        makeFinanceCard('Jobs and inflation data remain the primary US driver', 'USA', 'Primary driver', ['Treasury yields', 'US dollar'], 'The market is weighing incoming labor and inflation data against the Federal Reserve outlook.'),
+        makeFinanceCard('European shares track earnings and policy signals', 'EU', 'Market movement', ['STOXX Europe 600', 'DAX', 'CAC 40'], 'European benchmarks are mixed while investors compare company results with the policy backdrop.'),
+        makeFinanceCard('ECB guidance keeps the European rate path central', 'EU', 'Primary driver', ['Euro', 'German Bunds'], 'The European Central Bank outlook remains the main cross-market driver in the region.'),
+        makeFinanceCard('Asian markets move unevenly around China and yen signals', 'Asia', 'Regional overview', ['Nikkei 225', 'Hang Seng', 'MSCI Asia Pacific'], 'Asian markets are mixed as China data and currency policy shape the regional session.')
+      ]
+    });
 
     function slug(value) { return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
     function introFor(name, type) {
@@ -252,13 +274,35 @@
       };
     }
 
+    function makeFinanceCard(title, region, financeKind, instruments, movement) {
+      return {
+        id: `finance-${slug(region)}-${slug(financeKind)}`,
+        title, section: 'Finance', type: 'Finance', region, finance_kind: financeKind,
+        as_of: '2026-07-25T10:00:00+02:00', instruments, movement,
+        drivers: ['Mock market data and a named policy or macroeconomic driver.'],
+        summary: movement,
+        detail: [
+          `${movement} The figures are a compact mock snapshot as of 10:00 CEST, with the named instruments providing the frame for the move.`,
+          `The immediate significance is directional rather than predictive: the session shows where attention is concentrated, not where prices must go next.`,
+          `The relevant context is the relationship between market pricing, incoming data, and official policy signals. Different instruments can react differently to the same headline.`,
+          `The next update should confirm the close, refresh the as-of time, and note any material change in the stated drivers. This section is informational and is not investment advice.`
+        ],
+        why: 'Provides a broad, source-backed market snapshot.', status: 'Verified', confidence: 'Medium', timestamp: 'As of 10:00 CEST',
+        sources: [
+          { label: 'Primary / official', name: `${region} market or central-bank data`, url: 'https://example.com/finance-primary' },
+          { label: 'Independent / reporting', name: 'Markets desk report', url: 'https://example.com/finance-reporting' },
+          { label: 'Data / context', name: 'Reference market data', url: 'https://example.com/finance-data' }
+        ]
+      };
+    }
+
     let activeTheme = localStorage.getItem('daily-report-theme') || 'light';
     let navMode = 'scroll';
     let activeFilter = 'all';
     document.documentElement.dataset.theme = activeTheme;
 
     function navLinks() {
-      return `<a href="#news" data-nav-target="all">Today</a><a href="#sports" data-nav-target="sports">Sports</a><a href="#teams" data-nav-target="teams">My teams</a><a href="#events" data-nav-target="events">Events</a><a href="#weekly" data-nav-target="weekly">Week</a><a href="#monthly" data-nav-target="monthly">Month</a>`;
+      return `<a href="#news" data-nav-target="all">Today</a><a href="#sports" data-nav-target="sports">Sports</a><a href="#finance" data-nav-target="finance">Finance</a><a href="#teams" data-nav-target="teams">My teams</a><a href="#events" data-nav-target="events">Events</a><a href="#weekly" data-nav-target="weekly">Week</a><a href="#monthly" data-nav-target="monthly">Month</a>`;
     }
 
     function shiftDate(dateISO, offset) {
@@ -294,7 +338,9 @@
     }
 
     function cardMarkup(card) {
+      const financeLabel = card.type === 'Finance' && card.region ? `<span class="finance-region">${card.region}</span>` : '';
       return `<article class="card" tabindex="0" role="button" data-card-id="${card.id}">
+        ${financeLabel}
         <span class="tag">${card.type} · ${card.section}</span>
         <h3>${card.title}</h3>
         <p>${card.summary}</p>
@@ -310,7 +356,7 @@
     }
 
     function rollupMarkup(hero = false) {
-      return `<section class="rollup${hero ? ' hero-rollup' : ''}" id="weekly"><div class="eyebrow">The midnight desk &middot; Editor&apos;s rollup</div>${hero ? `<div class="rollup-layout"><div class="rollup-main"><h1>Twenty-five minutes of useful context.</h1><p>${edition.newsRollup}</p></div><div class="rollup-cards"><article class="rollup-summary"><div class="eyebrow">News summary</div><h3>News in one sitting</h3><p>${edition.newsRollup}</p></article><article class="rollup-summary"><div class="eyebrow">Sports summary</div><h3>Sports in one sitting</h3><p>${edition.sportsRollup}</p></article></div><div class="rollup-pulse"><div class="eyebrow">Edition pulse</div><div class="rollup-pulse-items"><span><strong>23</strong> desks</span><span><strong>115</strong> mock cards</span><span><strong>3</strong> source types</span><span><strong>0</strong> live claims</span></div><span class="rollup-pulse-source">No. 001 / Mock data</span></div></div>` : ''}${hero ? '' : `<div class="rollup-grid"><div><h3>News in one sitting</h3><p>${edition.newsRollup}</p></div><div><h3>Sports in one sitting</h3><p>${edition.sportsRollup}</p></div></div>`}</section>`;
+      return `<section class="rollup${hero ? ' hero-rollup' : ''}" id="weekly"><div class="eyebrow">The midnight desk &middot; Editor&apos;s rollup</div>${hero ? `<div class="rollup-layout"><div class="rollup-main"><h1>Twenty-five minutes of useful context.</h1><p>${edition.newsRollup}</p><p class="rollup-finance">${edition.financeRollup}</p></div><div class="rollup-cards"><article class="rollup-summary"><div class="eyebrow">News summary</div><h3>News in one sitting</h3><p>${edition.newsRollup}</p></article><article class="rollup-summary"><div class="eyebrow">Sports summary</div><h3>Sports in one sitting</h3><p>${edition.sportsRollup}</p></article></div><div class="rollup-pulse"><div class="eyebrow">Edition pulse</div><div class="rollup-pulse-items"><span><strong>24</strong> desks</span><span><strong>120</strong> mock cards</span><span><strong>3</strong> source types</span><span><strong>0</strong> live claims</span></div><span class="rollup-pulse-source">No. 001 / Mock data</span></div></div>` : ''}${hero ? '' : `<div class="rollup-grid"><div><h3>News in one sitting</h3><p>${edition.newsRollup}</p></div><div><h3>Sports in one sitting</h3><p>${edition.sportsRollup}</p></div></div>`}</section>`;
     }
 
     function footer() {
@@ -320,9 +366,10 @@
     function renderEdition() {
       const news = edition.sections.filter(s => s.type === 'News');
       const sports = edition.sections.filter(s => s.type === 'Sports');
+      const finance = edition.sections.filter(s => s.type === 'Finance');
       const teams = edition.sections.filter(s => s.type === 'Followed club');
       const events = edition.sections.filter(s => s.type === 'Events');
-      return `<div class="shell edition" id="top">${header()}${rollupMarkup(true)}<div id="news" data-content-group="news">${news.map(sectionMarkup).join('')}</div><div id="sports" data-content-group="sports">${sports.map(sectionMarkup).join('')}</div><div id="teams" data-content-group="teams">${teams.map(sectionMarkup).join('')}</div><div id="events" data-content-group="events">${events.map(sectionMarkup).join('')}</div>${footer()}</div>`;
+      return `<div class="shell edition" id="top">${header()}${rollupMarkup(true)}<div id="news" data-content-group="news">${news.map(sectionMarkup).join('')}</div><div id="sports" data-content-group="sports">${sports.map(sectionMarkup).join('')}</div><div id="finance" data-content-group="finance">${finance.map(sectionMarkup).join('')}</div><div id="teams" data-content-group="teams">${teams.map(sectionMarkup).join('')}</div><div id="events" data-content-group="events">${events.map(sectionMarkup).join('')}</div>${footer()}</div>`;
     }
 
     function render() {
@@ -334,6 +381,12 @@
       const card = edition.sections.flatMap(section => section.cards).find(item => item.id === id);
       if (!card) return;
       document.getElementById('modal').innerHTML = `<div class="detail-top"><span class="eyebrow">${card.type} · ${card.section}</span><button class="icon-btn" type="button" data-close aria-label="Close story">×</button></div><h2>${card.title}</h2><p class="modal-summary">${card.summary}</p><div class="evidence"><div><span class="eyebrow">Status</span><strong>${card.status}</strong></div><div><span class="eyebrow">Confidence</span><strong>${card.confidence}</strong></div><div><span class="eyebrow">Why here</span><strong>${card.why}</strong></div></div><div class="modal-copy">${card.detail.map(paragraph => `<p>${paragraph}</p>`).join('')}</div><div class="sources"><div class="eyebrow">Bibliography / source mix</div>${card.sources.map(source => `<a href="${source.url}" target="_blank" rel="noreferrer" onclick="event.preventDefault(); showToast('Mock source link — connect live sourcing later.');">${source.label} · ${source.name} ↗</a>`).join('')}</div><div class="feedback"><span>Was this useful or accurate?</span><button class="text-btn" type="button" data-feedback="up">Thumbs up</button><button class="text-btn" type="button" data-feedback="down">Thumbs down</button></div>`;
+      if (card.type === 'Finance') {
+        const meta = document.createElement('div');
+        meta.className = 'finance-meta';
+        meta.textContent = `${card.region} · As of ${card.as_of} · ${card.instruments.join(', ')} · ${card.movement}`;
+        document.getElementById('modal').querySelector('.modal-summary').after(meta);
+      }
       document.getElementById('modalBackdrop').classList.add('open');
     }
 
@@ -356,7 +409,7 @@
       const target = link.dataset.navTarget;
       if (navMode === 'filter') {
         event.preventDefault();
-        if (['all', 'news', 'sports', 'teams', 'events'].includes(target)) {
+        if (['all', 'news', 'sports', 'finance', 'teams', 'events'].includes(target)) {
           activeFilter = target;
           applyNavigation();
           if (target === 'all') window.scrollTo({ top: 0, behavior: 'smooth' });
