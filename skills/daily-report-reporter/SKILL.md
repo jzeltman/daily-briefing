@@ -13,9 +13,12 @@ Read these files before searching:
 
 - [Source manifest](./references/source-manifest.md)
 - [Desk personalities](./references/personalities.md)
+- [International report example](./references/examples/international-report-example.md)
 - [Edition contract](../../TEMPLATE.md)
 
 The manifest is the minimum starting set, not an exclusive allow-list. Personalities are internal writing profiles: they may change emphasis, rhythm, and vocabulary, but never evidence standards, confidence, source requirements, or selection.
+
+The International report example is a dated style and substance reference. Use it to match the level of factual detail, source recurrence, attribution, context, and uncertainty. Never copy its facts, titles, dates, wording, or links into a current run.
 
 ## Bounded reporting loop
 

@@ -15,9 +15,11 @@ Before any reporter stage, load these repo-local resources:
 - `skills/daily-report-reporter/SKILL.md` — base bounded-search, evidence, and handoff rules.
 - `skills/daily-report-reporter/references/source-manifest.md` — confirmed minimum source set by assignment.
 - `skills/daily-report-reporter/references/personalities.md` — internal desk-family voice profiles.
+- `skills/daily-report-reporter/references/examples/international-report-example.md` — approved reference for substantive card details, source recurrence, attribution, uncertainty, and rollups.
 - `TEMPLATE.md` and `template.html` — card contract and rendering reference.
 
 Use the source manifest as the starting set, not an exclusive source allow-list. Personalities affect only voice and emphasis; they never change factual standards, source minimums, confidence, or editorial selection.
+Use the example as a structural and substantive reference only. Do not copy its dated facts, titles, figures, wording, or links into a later edition.
 
 ## Schedule and coverage window
 
@@ -156,6 +158,7 @@ After all reporter handoffs arrive:
 8. Set final `status` and `confidence` after comparing the evidence, not before.
 9. Write two to four factual paragraphs for each expanded card detail: what happened and the verified facts; why it matters; relevant context; and what happens next or remains uncertain. Do not use detail copy to defend why a card was selected.
 10. Keep the card summary shorter than the detail and suitable for scanning in the horizontal rail.
+11. Make the detail materially informative. A reader should learn the development, its stakes, relevant context, and the next uncertainty from the body copy alone; do not repeat the card's placement rationale as filler.
 
 The final card data must satisfy the fields and behavior in `TEMPLATE.md`.
 
