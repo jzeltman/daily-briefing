@@ -1,10 +1,12 @@
 # The Daily Report — scheduled generation prompt
 
-Use this prompt as the instruction body for the scheduled content-generation automation. It defines how to gather and edit the information before rendering the edition described by [TEMPLATE.md](./TEMPLATE.md) and [template.html](./template.html).
+Use this prompt as the instruction body for the scheduled content-generation automation. It defines how to gather and edit the information before writing the dated JSON edition consumed by [index.html](./index.html), following [TEMPLATE.md](./TEMPLATE.md) and [template.html](./template.html).
+
+Use `index.html` as the stable renderer and write the reporter/editor output to `data-YYYYMMDD.json`. The JSON filename must use the edition date in `YYYYMMDD` form; do not inline that payload into `index.html` or generate a new HTML page. Historical editions are inspected with `index.html?date=YYYYMMDD`; the renderer derives the matching JSON filename and probes the next date to enable or disable Next.
 
 ## Role
 
-Act as the orchestrator for The Daily Report. Run a bounded reporter → editor → rollup → printer pipeline. The output must be useful, source-backed, explicit about uncertainty, and ready to render as one self-contained HTML edition.
+Act as the orchestrator for The Daily Report. Run a bounded reporter → editor → rollup → printer pipeline. The output must be useful, source-backed, explicit about uncertainty, and ready to serialize as one dated JSON edition consumed by the stable HTML renderer.
 
 The report is fully AI-generated. Do not wait for human review, but do not turn missing evidence into invented facts.
 
@@ -24,7 +26,7 @@ Use the example as a structural and substantive reference only. Do not copy its 
 ## Schedule and coverage window
 
 - Run once daily at 10:00 in `Europe/Madrid`.
-- Each run produces the single canonical edition for its calendar date. Its Previous edition link should target the most recent archived daily edition.
+- Each run produces the single canonical JSON edition for its calendar date. Its `previousEdition` field should identify the most recent available JSON edition by ISO date.
 - Create a unique `run_id` for every run.
 - Determine the coverage window from the previous successful scheduled run to the current run.
 - Include a small amount of context from before the window when it is necessary to explain an ongoing story.
@@ -173,19 +175,19 @@ Only after all final cards are selected:
 - Keep rollups descriptive and evidence-backed; do not introduce a major claim that is absent from the final cards.
 - Produce the edition pulse from actual run metadata, not placeholder counts.
 
-## Printer and output
+## Printer and JSON output
 
-Render one self-contained HTML file using `template.html` as the visual reference.
+Write one complete dated JSON payload. `index.html` is the permanent renderer and `template.html` remains the visual reference; neither should be rewritten during a normal scheduled run.
 
-Before replacing the live root page:
+Before writing the JSON output:
 
-1. Read the current root `index.html` and its edition date.
-2. Save that unchanged file as `editions/YYYY-MM-DD.html` using the date found in the old edition.
-3. Render the new edition from `template.html` with the finalized data.
-4. Write the new edition to the root `index.html`.
-5. Set the new page’s previous link to the most recent archived daily edition. Disable or omit its next link because it is the latest edition.
+1. Determine the edition date in `Europe/Madrid`.
+2. Serialize the finalized edition object to `data-YYYYMMDD.json`.
+3. Preserve `dateISO` and `previousEdition` as ISO dates inside the JSON payload.
+4. Verify the output at `index.html?date=YYYYMMDD`.
+5. Leave `index.html` unchanged; the page derives the current, previous, and available next JSON filenames at runtime.
 
-The printer must preserve:
+The renderer must preserve:
 
 - Sticky logo/navigation header.
 - Scroll/filter navigation behavior.
@@ -213,8 +215,7 @@ Return a machine-readable manifest containing:
 - explicit `previousEdition` reference used by the current page
 - unresolved conflicts and low-confidence items
 - rollup completion status
-- output path
-- archive path, if an archive was written
+- JSON output path
 - publication status
 
 Never claim that GitHub publication succeeded unless the commit/push step returned a verifiable success result.

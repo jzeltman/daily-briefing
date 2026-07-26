@@ -1,17 +1,19 @@
 # The Daily Report — edition template
 
-`TEMPLATE.md` is the canonical generator contract. [template.html](./template.html) is the canonical visual and interaction reference. The root `index.html` is not the template: it is always the most current edition served by GitHub Pages.
+`TEMPLATE.md` is the canonical generator contract. [template.html](./template.html) is the canonical visual and interaction reference. The root `index.html` is the stable dynamic renderer served by GitHub Pages.
+
+Each scheduled run writes one dated reporter/editor payload named `data-YYYYMMDD.json`. The renderer derives that filename from the current Europe/Madrid date, or from the `?date=YYYYMMDD` query parameter for historical editions. Do not inline the edition object into `index.html`.
 
 ## Output contract
 
-- Generate one self-contained HTML file per edition.
-- Start from `template.html` and replace its edition data while preserving the cleaned broadsheet structure.
+- Generate one dated JSON file per edition.
+- Use `index.html` as the stable renderer and preserve its cleaned broadsheet structure.
 - Keep the current edition at the repository root as `index.html` so GitHub Pages serves it by default.
-- Before replacing root `index.html`, copy the existing current edition to `editions/YYYY-MM-DD.html`, using the date already inside that edition.
+- Do not generate a new HTML page for each edition.
 - Generate one canonical edition daily at 10:00 in `Europe/Madrid`.
 - Store the previous edition explicitly in the generated edition data when an archive exists.
-- After generating the new root edition, update its Previous link to the most recent archived day and disable or omit its Next link because it is the newest page.
-- Use relative archive links so the same files work on GitHub Pages and in a local preview.
+- Previous and next links should target `index.html?date=YYYYMMDD`; the renderer derives the corresponding `data-YYYYMMDD.json` filename.
+- The renderer should probe the next dated JSON file and leave Next disabled when it does not exist.
 - Keep the existing newspaper-inspired visual language, responsive behavior, light/dark mode, sticky header, navigation, filter mode, expandable story details, source bibliography, and feedback controls.
 - Do not replace the page with a generic dashboard, a plain article feed, or a new visual system.
 - Replace mock data only. Preserve the page’s layout and interaction model unless a later design decision explicitly changes this document.
@@ -53,19 +55,17 @@
 
 5. Footer and archive hooks
    - Keep weekly and monthly navigation placeholders until those features are backed by generated data.
-   - Date navigation points to `editions/YYYY-MM-DD.html` archive pages.
+   - Date navigation points to `index.html?date=YYYYMMDD` and loads the matching dated JSON payload.
 
 ## GitHub Pages generation sequence
 
 Each scheduled generation should follow this order:
 
-1. Read the current root `index.html` date.
-2. Save that unchanged file as `editions/<current-date>.html`.
-3. Gather and edit the next edition’s content.
-4. Render the next edition using the structure in this document.
-5. Write the new edition to the root `index.html`.
-6. Set the new page’s previous link to the most recent archived day. Set its next link to disabled/omitted.
-7. Commit/publish the root page and the new archive file together, if publication is configured.
+1. Determine the edition date in `Europe/Madrid`.
+2. Gather and edit the edition’s content.
+3. Write the finalized edition object to `data-YYYYMMDD.json`.
+4. Verify it through `index.html?date=YYYYMMDD`; do not modify `index.html`.
+5. Commit/publish the new JSON file, if publication is configured.
 
 ## Story card contract
 

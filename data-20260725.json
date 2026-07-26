@@ -1,0 +1,57 @@
+{
+  "date": "Saturday, July 25, 2026",
+  "dateISO": "2026-07-25",
+  "edition": "Midnight edition",
+  "time": "00:00 CEST",
+  "forecastToday": ["☀️", "31° / 22°", "Bright"],
+  "lead": "A calm, useful read for the stories that shape your day.",
+  "newsRollup": "A quick tour of the major currents: diplomacy is moving in small increments, Ohio is balancing growth with pressure on local systems, and Valencia is leaning into a busy cultural summer.",
+  "sportsRollup": "The sports desk is watching the long season take shape: roster decisions, early form, and the small signals that become much bigger stories by autumn.",
+  "financeRollup": "Finance is a compact market snapshot; this migration payload predates the Finance rail.",
+  "forecast": [
+    [
+      "Sun",
+      "☀️",
+      "31° / 22°",
+      "Bright"
+    ],
+    [
+      "Mon",
+      "⛅",
+      "30° / 21°",
+      "Partly cloudy"
+    ],
+    [
+      "Tue",
+      "☀️",
+      "32° / 22°",
+      "Sunny"
+    ],
+    [
+      "Wed",
+      "🌤️",
+      "31° / 23°",
+      "Warm"
+    ],
+    [
+      "Thu",
+      "🌦️",
+      "29° / 21°",
+      "Passing showers"
+    ],
+    [
+      "Fri",
+      "☀️",
+      "30° / 20°",
+      "Clear"
+    ],
+    [
+      "Sat",
+      "⛅",
+      "28° / 20°",
+      "Breezy"
+    ]
+  ],
+  "sections": [],
+  "pulse": {"desks": 0, "cards": 0, "sources": 0, "liveClaims": 0}
+}
