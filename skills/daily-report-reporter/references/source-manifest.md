@@ -1,6 +1,6 @@
 # Confirmed source manifest
 
-Version: `2026-07-25.1`  
+Version: `2026-07-26.1`
 Maintenance: review domains manually; each scheduled run should report broken or degraded entries. These stable domains are minimum starting points. Reporters may add relevant sources and must preserve the actual URL used in the bibliography.
 
 Source roles: `primary` is an official institution, league, team, event organizer, exchange, or data provider; `independent` is established reporting; `analysis` is optional context or viewpoint material.
@@ -94,3 +94,63 @@ These are optional context sources and query patterns for the matching confirmed
 - Finance-USA — analysis/viewpoint: Financial Times Markets (https://www.ft.com/markets); fallback: `US index move market driver as of date`.
 - Finance-EU — analysis/viewpoint: Financial Times Markets (https://www.ft.com/markets); fallback: `European index move ECB driver as of date`.
 - Finance-Asia — analysis/viewpoint: Nikkei Asia (https://asia.nikkei.com); fallback: `Asia markets move China yen driver as of date`.
+
+## Expanded confirmed discovery sources
+
+Added 2026-07-26. These sources supplement the minimum primary/official and independent sources above. Use the actual article URL in the card bibliography; do not treat a homepage alone as evidence.
+
+### International
+
+- BBC News World — https://www.bbc.com/news/world
+- Al Jazeera — https://www.aljazeera.com/
+- Associated Press World — https://apnews.com/world-news
+- CNN World — https://www.cnn.com/world
+- The New York Times International — https://www.nytimes.com/international/
+- The Hindu International — https://www.thehindu.com/news/international/
+- Euronews International — https://www.euronews.com/news/international
+
+### Ohio
+
+- The Columbus Dispatch — https://www.dispatch.com/
+- cleveland.com / The Plain Dealer — https://www.cleveland.com/plaindealer/
+- The Cincinnati Enquirer — https://www.cincinnati.com/
+
+### United States
+
+- USA Today — https://www.usatoday.com/
+- The New York Times — https://www.nytimes.com/
+- CNN — https://www.cnn.com/
+- Associated Press U.S. News — https://apnews.com/us-news
+- The Washington Post — https://www.washingtonpost.com/
+- The Guardian U.S. News — https://www.theguardian.com/us-news
+- U.S. News — https://www.usnews.com/
+- Fox News U.S. — https://www.foxnews.com/us
+
+### Valencia, Spain
+
+- Levante-EMV Valencia — https://www.levante-emv.com/valencia/
+- Las Provincias — https://www.lasprovincias.es
+- El Español Valencia — https://www.elespanol.com/valencia/
+- 20 Minutos Valencia — https://www.20minutos.es/comunidad-valenciana/valencia/
+- El País Comunitat Valenciana — https://elpais.com/espana/comunidad-valenciana/
+- La Razón Comunitat Valenciana — https://www.larazon.es/comunidad-valenciana/valencia/
+
+### Spain
+
+- ABC — https://www.abc.es/
+- El País — https://elpais.com/
+- RTVE Noticias — https://www.rtve.es/noticias/
+- El Mundo — https://www.elmundo.es/
+- EFE España — https://efe.com/portada-espana/
+
+### European news / EU
+
+- Reuters Europe — https://www.reuters.com/world/europe/
+- BBC Europe — https://www.bbc.com/news/world/europe
+- Euronews — https://www.euronews.com/
+- Associated Press Europe — https://apnews.com/hub/europe
+- Euronews Europe — https://www.euronews.com/news/europe
+- The Telegraph Europe — https://www.telegraph.co.uk/europe/
+- The Guardian Europe — https://www.theguardian.com/world/europe-news
+- Le Monde — https://www.lemonde.fr/
+- Der Spiegel — https://www.spiegel.de/
