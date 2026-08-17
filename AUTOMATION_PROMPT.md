@@ -70,6 +70,36 @@ Run bounded reporter stages for each assignment below. Each reporter should retu
 
 Followed-club items may also appear in their broader league section, but the editor must deduplicate them and preserve the most useful placement.
 
+### Sports game rails and video sources
+
+Every Sports and Followed club section must include a `sports` object for the sports header rail and modal panels. It must contain `games`, `standings`, and `schedule` arrays. Each game must include `id`, `dateISO`, `date`, `time`, `home`, `away`, `matchup`, `score`, `homeScore`, `awayScore`, `status`, `venue`, `summary`, and `stats`. Completed games must also include `videoUrl` and `videoLabel` when an official channel is available.
+
+Select the rail contents by sport:
+
+- NBA: every completed game from the previous night, plus the next scheduled game when available.
+- NFL and college football: all matches from the current matchday or week.
+- MLS, La Liga, and Premier League: all matches from the current matchday.
+- Formula 1 and IndyCar: the previous race and the upcoming race only.
+- EuroLeague, Spanish basketball, and followed teams: the relevant completed and upcoming games for the current window.
+
+Use these official YouTube channels for completed-game recap links. Link to the channel, not to an invented individual video:
+
+| Assignment | Official YouTube source |
+|---|---|
+| NBA | https://www.youtube.com/@NBA |
+| MLS | https://www.youtube.com/@mls |
+| NFL | https://www.youtube.com/@NFL |
+| La Liga | https://www.youtube.com/@LALIGAHYPERMOTION |
+| Premier League | https://www.youtube.com/@premierleague |
+| Formula 1 | https://www.youtube.com/@Formula1 |
+| IndyCar | https://www.youtube.com/@indycar |
+| EuroLeague | https://www.youtube.com/@euroleague |
+| Spanish basketball / ACB | https://www.youtube.com/@acbcom |
+
+Followed clubs inherit their league source: Manchester City uses Premier League, Real Madrid uses La Liga, Valencia Basket uses Spanish basketball, and Columbus Crew uses MLS. Do not fabricate a video URL. If no confirmed channel is available, omit `videoUrl` and report the omission in the run manifest.
+
+The compact rail contains only the teams or entrants and stacked scores. Keep dates, status, venue, stats, and explanatory text for the expanded game modal.
+
 ### Events and social calendar
 
 - Current and upcoming social events in Valencia: concerts, festivals, exhibitions, markets, restaurant openings, and other useful local activities.
@@ -86,11 +116,12 @@ For every assignment:
 5. For contested or consequential stories, seek a practical source mix: primary/official material, neutral or straight reporting, and contrasting analysis when available.
 6. Use local sources for Valencia and Ohio items when they provide direct reporting or useful local detail.
 7. For sports, prioritize current official league/team information, reputable game or race reporting, and direct postgame or post-event statements.
-8. For events, verify date, time, location, ticket or attendance status, and whether the event is current or already passed.
-9. Do not treat a search-result snippet, social post, single unsourced claim, or stale preview as sufficient evidence for an important card.
-10. Record publication time and, when available, the event time separately. A newly published article about an old event is not a new event.
-11. Start from the assignment's confirmed primary/official and independent sources in the source manifest. Report broken or degraded manifest sources in the run manifest.
-12. Ordinary candidates need at least two usable sources: one primary/official and one independent report. Aim for three for contested, Finance, and rumor-watch candidates.
+8. For sports game rails, verify results, schedules, standings, and stats from official league/team/series sources before using independent reporting for context. Never infer a score from a headline or search snippet.
+9. For events, verify date, time, location, ticket or attendance status, and whether the event is current or already passed.
+10. Do not treat a search-result snippet, social post, single unsourced claim, or stale preview as sufficient evidence for an important card.
+11. Record publication time and, when available, the event time separately. A newly published article about an old event is not a new event.
+12. Start from the assignment's confirmed primary/official and independent sources in the source manifest. Report broken or degraded manifest sources in the run manifest.
+13. Ordinary candidates need at least two usable sources: one primary/official and one independent report. Aim for three for contested, Finance, and rumor-watch candidates.
 
 Search with several focused queries instead of one giant query. Useful query shapes include:
 
@@ -144,6 +175,7 @@ Candidate rules:
 - Record conflicts instead of silently choosing the most convenient version.
 - Reject candidates with no usable source, no clear connection to the assignment, or no meaningful change in the coverage window unless they are necessary ongoing context.
 - For Finance candidates, also return `region`, `as_of`, `instruments`, `movement`, and `drivers`; keep the copy informational with no investment recommendation.
+- For Sports candidates, return the `game_records`, `standings`, and `schedule` evidence needed to build the section-level `sports` object. Keep game results separate from story-card summaries.
 - A sports reporter may return at most one `Rumor watch` candidate. It must have two reputable independent reports, explicit attribution, low or medium confidence, and an uncertainty statement. Omit it when that evidence bar is not met.
 
 ## Editor stage
@@ -161,6 +193,7 @@ After all reporter handoffs arrive:
 9. Write two to four factual paragraphs for each expanded card detail: what happened and the verified facts; why it matters; relevant context; and what happens next or remains uncertain. Do not use detail copy to defend why a card was selected.
 10. Keep the card summary shorter than the detail and suitable for scanning in the horizontal rail.
 11. Make the detail materially informative. A reader should learn the development, its stakes, relevant context, and the next uncertainty from the body copy alone; do not repeat the card's placement rationale as filler.
+12. Build the section-level sports rail from verified game records after story cards are finalized. Include every required game for that sport's rail rule, preserve stacked home/away scores, and attach only confirmed official YouTube channel URLs.
 
 The final card data must satisfy the fields and behavior in `TEMPLATE.md`.
 
@@ -171,6 +204,7 @@ Only after all final cards are selected:
 - Write the overall editor’s rollup for the left side of the rollup layout.
 - Write the News summary card from the finalized news cards.
 - Write the Sports summary card from the finalized sports cards.
+- Confirm that every Sports and Followed club section has the required `sports.games`, `sports.standings`, and `sports.schedule` data before writing the rollups.
 - Write the Finance input from its five finalized cards, preserving the USA 2 / EU 2 / Asia 1 distribution and the market-movement/primary-driver mix.
 - Keep rollups descriptive and evidence-backed; do not introduce a major claim that is absent from the final cards.
 - Produce the edition pulse from actual run metadata, not placeholder counts.
@@ -199,6 +233,7 @@ The renderer must preserve:
 - Finance navigation/filter group and a five-card Finance rail with region and market metadata in expanded details.
 - Expanded detail view, bibliography, source labels, confidence, uncertainty, and feedback controls.
 - Rumor-watch labeling and attribution where an evidence-qualified sports rumor card was selected.
+- Sports header rails with compact stacked-score tiles, standings and schedule modal data, and official YouTube channel links for completed games.
 
 Run `node skills/daily-report-reporter/scripts/validate-handoff.cjs <handoff.json>` before printing. The validator must pass required assignments, card fields, source minimums, 2–4 detail paragraphs, Finance 2/2/1 distribution, and rumor labeling.
 
