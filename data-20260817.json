@@ -1,12 +1,12 @@
 {
   "date": "Monday, August 17, 2026",
   "dateISO": "2026-08-17",
-  "time": "10:00 CEST",
-  "lead": "Monday checkpoint: Hormuz shipping risk stays active, Valencian storms reset the weather watch, LaLiga has opened, Gamescom is next, and markets await new policy evidence.",
+  "time": "07:00 CEST",
+  "lead": "Monday desk: Hormuz shipping risk remains active, Valencia is cooler after storms, LaLiga’s calendar is live, Gamescom is next, and markets are weighing softer growth against energy risk.",
   "previousEdition": "2026-08-14",
-  "newsRollup": "AP’s Monday deadline report keeps the Hormuz story active, while the existing Valencia and Spain weather checks remain practical for travel and outdoor plans. Most other news desks stay explicitly ongoing context.",
-  "sportsRollup": "LaLiga’s first matchday now has verified results and upcoming fixtures; the Premier League, NFL, MLS, Formula 1, and IndyCar rails show official schedule checkpoints. Basketball and college-football desks have no current completed game to add, and no rumor-watch card cleared the evidence bar.",
-  "financeRollup": "The finance rail now records a mixed Monday snapshot, with oil lower and U.S. closing data still pending. The next scheduled evidence points are the Aug. 19 Federal Reserve minutes and the ECB policy backdrop; these are descriptions, not investment advice.",
+  "newsRollup": "The Hormuz story remains a live shipping and diplomacy risk, while Valencia’s storm aftermath has reset the practical weather watch. The remaining public-affairs desks are carried as explicitly ongoing context where no newer verified change cleared the bounded window.",
+  "sportsRollup": "LaLiga’s official page lists the next fixtures through Aug. 27, while the Premier League’s official calendar puts its season opening on Aug. 22. Other rails keep verified offseason, race, schedule, and roster checkpoints without padding empty result windows.",
+  "financeRollup": "AP’s Monday snapshot has European and Asian shares mixed, oil lower, and the U.S. close pending after weaker data revived stagflation concern. The Aug. 19 Fed minutes are the next named policy checkpoint; this is description, not advice.",
   "forecastToday": [
     "⛅",
     "21° / 31°",
@@ -7685,7 +7685,7 @@
             {
               "label": "Independent reporting",
               "name": "Associated Press world markets update",
-              "url": "https://apnews.com/article/bf398d5a01f611921c0b48a8bfc884d9",
+              "url": "https://apnews.com/article/stocks-markets-futures-rates-oil-japan-bf398d5a01f611921c0b48a8bfc884d9",
               "source_type": "straight-reporting",
               "viewpoint": "neutral",
               "supports": "Monday mixed shares, futures, oil, and economic-data driver",
@@ -8045,14 +8045,14 @@
     }
   ],
   "run": {
-    "runId": "daily-report-20260817-105902",
-    "startedAt": "2026-08-17T10:59:02+02:00",
-    "endedAt": "2026-08-17T11:00:02+02:00",
+    "runId": "daily-report-20260817-112647",
+    "startedAt": "2026-08-17T11:26:47+02:00",
+    "endedAt": "2026-08-17T11:30:00+02:00",
     "timezone": "Europe/Madrid",
-    "schedule": "10:00 Europe/Madrid",
-    "previousSuccessfulRun": "daily-report-20260817-095939",
+    "schedule": "07:00 Europe/Madrid",
+    "previousSuccessfulRun": "daily-report-20260817-105902",
     "previousEdition": "2026-08-14",
-    "coverageWindow": "2026-08-17T09:59:39+02:00/2026-08-17T10:59:02+02:00",
+    "coverageWindow": "2026-08-17T10:59:02+02:00/2026-08-17T11:30:00+02:00",
     "completedAssignments": [
       "International",
       "Ohio",
@@ -8303,7 +8303,7 @@
       "EU video-game events": 5,
       "Finance": 5
     },
-    "rollup": "completed after a one-hour bounded refresh; AP deadline and market updates selected, official sports rail data added, ongoing and upcoming context retained elsewhere",
+    "rollup": "completed after a bounded current-source refresh; AP market movement, Valencia weather context, and official LaLiga/Premier League schedule checks were selected, with ongoing and upcoming context retained elsewhere",
     "currentEditionDate": "2026-08-17",
     "blockedCategories": [],
     "uncertainCategories": [
@@ -8336,19 +8336,19 @@
         "index.html unchanged by this run"
       ]
     },
-    "publicationStatus": "published to origin/main; commit c43610a",
-    "rewrittenCards": 2,
-    "carriedForwardCards": 118
+    "publicationStatus": "pending commit and push; final result returned in the automation run manifest",
+    "rewrittenCards": 3,
+    "carriedForwardCards": 117
   },
   "runManifest": {
-    "runId": "daily-report-20260817-105902",
-    "startedAt": "2026-08-17T10:59:02+02:00",
-    "endedAt": "2026-08-17T11:00:02+02:00",
+    "runId": "daily-report-20260817-112647",
+    "startedAt": "2026-08-17T11:26:47+02:00",
+    "endedAt": "2026-08-17T11:30:00+02:00",
     "timezone": "Europe/Madrid",
-    "schedule": "10:00 Europe/Madrid",
-    "previousSuccessfulRun": "daily-report-20260817-095939",
+    "schedule": "07:00 Europe/Madrid",
+    "previousSuccessfulRun": "daily-report-20260817-105902",
     "previousEdition": "2026-08-14",
-    "coverageWindow": "2026-08-17T09:59:39+02:00/2026-08-17T10:59:02+02:00",
+    "coverageWindow": "2026-08-17T10:59:02+02:00/2026-08-17T11:30:00+02:00",
     "completedAssignments": [
       "International",
       "Ohio",
@@ -8599,7 +8599,7 @@
       "EU video-game events": 5,
       "Finance": 5
     },
-    "rollup": "completed after a one-hour bounded refresh; AP deadline and market updates selected, official sports rail data added, ongoing and upcoming context retained elsewhere",
+    "rollup": "completed after a bounded current-source refresh; AP market movement, Valencia weather context, and official LaLiga/Premier League schedule checks were selected, with ongoing and upcoming context retained elsewhere",
     "currentEditionDate": "2026-08-17",
     "blockedCategories": [],
     "uncertainCategories": [
@@ -8632,9 +8632,9 @@
         "index.html unchanged by this run"
       ]
     },
-    "publicationStatus": "published to origin/main; commit c43610a",
-    "rewrittenCards": 2,
-    "carriedForwardCards": 118
+    "publicationStatus": "pending commit and push; final result returned in the automation run manifest",
+    "rewrittenCards": 3,
+    "carriedForwardCards": 117
   },
   "pulse": {
     "desks": 24,
