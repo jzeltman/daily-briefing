@@ -4,9 +4,9 @@
   "time": "10:00 CEST",
   "lead": "Monday checkpoint: Hormuz shipping risk stays active, Valencian storms reset the weather watch, LaLiga has opened, Gamescom is next, and markets await new policy evidence.",
   "previousEdition": "2026-08-14",
-  "newsRollup": "The new evidence is concentrated rather than broad: AP reporting keeps the Hormuz shipping story live, while AEMET warnings and Valencian storm damage turn the weather rail into a practical check for travel and outdoor plans. The rest of the news desks remain explicitly ongoing context.",
-  "sportsRollup": "The Spanish and English football calendars have moved from preview toward live competition, with LaLiga open and the Premier League four days away. Other desks remain in preseason, roster, race-calendar, or schedule mode; no rumor-watch card cleared the evidence bar.",
-  "financeRollup": "The finance rail uses the latest verified regional snapshots and clearly marks incomplete Monday sessions. The next evidence points are the Aug. 19 Federal Reserve minutes and the ECB credit-policy backdrop; these are descriptions, not investment advice.",
+  "newsRollup": "AP’s Monday deadline report keeps the Hormuz story active, while the existing Valencia and Spain weather checks remain practical for travel and outdoor plans. Most other news desks stay explicitly ongoing context.",
+  "sportsRollup": "LaLiga’s first matchday now has verified results and upcoming fixtures; the Premier League, NFL, MLS, Formula 1, and IndyCar rails show official schedule checkpoints. Basketball and college-football desks have no current completed game to add, and no rumor-watch card cleared the evidence bar.",
+  "financeRollup": "The finance rail now records a mixed Monday snapshot, with oil lower and U.S. closing data still pending. The next scheduled evidence points are the Aug. 19 Federal Reserve minutes and the ECB policy backdrop; these are descriptions, not investment advice.",
   "forecastToday": [
     "⛅",
     "21° / 31°",
@@ -67,45 +67,46 @@
           "id": "international-0",
           "section": "International",
           "type": "News",
-          "title": "Hormuz shipping risk persists after attacks on UAE-linked tankers",
-          "summary": "AP reported further Middle East developments on Aug. 15 after two ADNOC-linked tankers were attacked; the incident keeps responsibility and safe passage unsettled.",
+          "title": "Iran peace deadline arrives with Hormuz reopening still unresolved",
+          "summary": "AP reported Monday that the 60-day deadline for a U.S.-Iran peace deal arrived without a visible compromise on reopening the Strait of Hormuz or beginning detailed nuclear talks.",
           "detail": [
-            "Associated Press reported on Aug. 15 that the UAE again accused Iran of targeting a vessel in the Strait of Hormuz, following the earlier report of attacks on two ADNOC-linked tankers. The earlier AP account said there were no injuries and minor reported damage.",
-            "The UAE attribution remains an attributed claim, not a completed independent finding. ADNOC and maritime authorities provide operational context, while the public evidence still does not settle responsibility or establish a durable navigation arrangement.",
-            "The practical next evidence is a clearer incident investigation and verified commercial traffic through the strait. Until then, the shipping story remains an active risk signal for energy, insurance, and regional diplomacy."
+            "Associated Press reported on Aug. 17 that the 60-day deadline set by the June Versailles agreement had arrived while the two sides remained further apart. Talks have focused on reopening the Strait of Hormuz and lifting the U.S. blockade, but AP reported no sign of a compromise or detailed nuclear negotiations.",
+            "The unresolved waterway question matters beyond diplomacy: Hormuz carried about a fifth of the world’s traded oil and gas before the war, so navigation, insurance, and energy-price risk remain linked to the talks. The UAE’s earlier attribution of tanker attacks to Iran is still an attributed claim, not a completed independent finding.",
+            "The next evidence is concrete movement on access through the strait, the blockade, and a verifiable negotiating channel. Until those appear, the deadline is a marker of stalled diplomacy rather than proof of a settled end-state."
           ],
           "status": "Developing",
           "confidence": "High",
-          "timestamp": "Checked 17 Aug 2026",
-          "publishedAt": "2026-08-15T07:13:24Z",
+          "timestamp": "Checked 17 Aug 2026, 10:59 CEST",
+          "publishedAt": "2026-08-17T08:33:16Z",
           "eventAt": null,
-          "why": "A continuing commercial-shipping incident is the clearest international change in the window.",
+          "why": "The current deadline passed during the coverage window without resolving the central Hormuz question.",
           "verifiedFacts": [
-            "AP reported further UAE claims about a vessel incident after the Aug. 14 tanker attacks.",
-            "AP reported no injuries and minor damage in the earlier ADNOC-linked tanker account."
+            "AP reported that the 60-day deadline arrived Monday.",
+            "AP reported that reopening Hormuz and lifting the blockade remained central issues.",
+            "AP reported no sign that detailed nuclear talks had begun."
           ],
           "attributedClaims": [
-            "The UAE attributed the attacks to Iran.",
-            "Maritime authorities reported minor damage to two vessels in the earlier account."
+            "The U.S. and Iran remain further apart than at the June interim deal.",
+            "The UAE attributed earlier tanker attacks to Iran."
           ],
           "analysis": [
-            "Repeated incidents make any proposed reopening or management arrangement harder to treat as settled."
+            "The deadline raises the cost of delay for shipping, energy, and regional diplomacy without itself changing the facts on the water."
           ],
           "uncertainty": [
-            "Responsibility, enforcement, and future traffic conditions remain unsettled."
+            "There is no confirmed reopening arrangement or completed public investigation assigning responsibility for the tanker attacks."
           ],
           "conflicts": [
-            "The UAE attribution has not been presented as a completed independent investigation."
+            "The UAE attribution remains disputed or incomplete in the public evidence."
           ],
           "sources": [
             {
               "label": "Independent reporting",
-              "name": "Associated Press Middle East update",
-              "url": "https://apnews.com/article/ba738b9fb8803f28313a19df8bbcac19",
+              "name": "Associated Press deadline update",
+              "url": "https://apnews.com/article/258e9c556fc861c05ccf6ed2b38515d6",
               "source_type": "straight-reporting",
               "viewpoint": "neutral",
-              "supports": "Aug. 15 UAE vessel claim and wider regional developments",
-              "published_at": "2026-08-15T07:13:24Z"
+              "supports": "Aug. 17 deadline, stalled talks, and Hormuz issues",
+              "published_at": "2026-08-17T08:33:16Z"
             },
             {
               "label": "Independent reporting",
@@ -113,21 +114,21 @@
               "url": "https://apnews.com/article/e8565c608ac5283ec8103c85df924b13",
               "source_type": "straight-reporting",
               "viewpoint": "neutral",
-              "supports": "Aug. 14 ADNOC-linked tanker attacks, injuries, and damage report",
+              "supports": "Aug. 14 UAE tanker-attack attribution and reported damage",
               "published_at": "2026-08-14T09:07:17Z"
             },
             {
-              "label": "Official / company",
-              "name": "ADNOC",
-              "url": "https://www.adnoc.ae/en/news-and-media/press-releases/2026/copy",
-              "source_type": "official",
+              "label": "Independent reporting",
+              "name": "Associated Press regional update",
+              "url": "https://apnews.com/article/ba738b9fb8803f28313a19df8bbcac19",
+              "source_type": "straight-reporting",
               "viewpoint": "neutral",
-              "supports": "Company and operational context during the shipping disruption",
-              "published_at": null
+              "supports": "Aug. 15 follow-up vessel claim and regional context",
+              "published_at": "2026-08-15T07:13:24Z"
             }
           ],
           "editionStatus": "updated",
-          "checkedAt": "2026-08-17T09:59:39+02:00"
+          "checkedAt": "2026-08-17T10:59:02+02:00"
         },
         {
           "id": "international-1",
@@ -1974,7 +1975,16 @@
           "editionStatus": "ongoing",
           "checkedAt": "2026-08-17T09:59:39+02:00"
         }
-      ]
+      ],
+      "sports": {
+        "games": [],
+        "standings": [],
+        "schedule": [],
+        "checkedAt": "2026-08-17T10:59:02+02:00",
+        "sourceUrls": [
+          "https://www.nba.com/summer-league/2026"
+        ]
+      }
     },
     {
       "name": "EuroLeague",
@@ -2237,7 +2247,16 @@
           "editionStatus": "ongoing",
           "checkedAt": "2026-08-17T09:59:39+02:00"
         }
-      ]
+      ],
+      "sports": {
+        "games": [],
+        "standings": [],
+        "schedule": [],
+        "checkedAt": "2026-08-17T10:59:02+02:00",
+        "sourceUrls": [
+          "https://www.euroleaguebasketball.net"
+        ]
+      }
     },
     {
       "name": "Spanish basketball",
@@ -2500,7 +2519,16 @@
           "editionStatus": "ongoing",
           "checkedAt": "2026-08-17T09:59:39+02:00"
         }
-      ]
+      ],
+      "sports": {
+        "games": [],
+        "standings": [],
+        "schedule": [],
+        "checkedAt": "2026-08-17T10:59:02+02:00",
+        "sourceUrls": [
+          "https://www.acb.com"
+        ]
+      }
     },
     {
       "name": "Formula 1",
@@ -2772,7 +2800,65 @@
           "editionStatus": "ongoing",
           "checkedAt": "2026-08-17T09:59:39+02:00"
         }
-      ]
+      ],
+      "sports": {
+        "games": [
+          {
+            "id": "formula-1-game-0",
+            "dateISO": "2026-07-26",
+            "date": "Sun, 26 Jul 2026",
+            "time": "",
+            "home": "Lando Norris",
+            "away": "F1 field",
+            "matchup": "Hungarian Grand Prix",
+            "score": "1st",
+            "homeScore": "1",
+            "awayScore": "",
+            "status": "Final",
+            "venue": "Hungaroring",
+            "summary": "Official race result: Lando Norris won the Hungarian Grand Prix.",
+            "stats": [
+              "Race: Hungarian Grand Prix",
+              "Round: 14"
+            ],
+            "videoUrl": "https://www.youtube.com/@Formula1",
+            "videoLabel": "Official league or series YouTube channel"
+          },
+          {
+            "id": "formula-1-game-1",
+            "dateISO": "2026-08-23",
+            "date": "Sun, 23 Aug 2026",
+            "time": "13:00 CEST",
+            "home": "F1 field",
+            "away": "F1 field",
+            "matchup": "Dutch Grand Prix",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Circuit Zandvoort",
+            "summary": "Official calendar lists the Dutch Grand Prix race for Aug. 23.",
+            "stats": [
+              "Practice and sprint sessions: Aug. 21–22",
+              "Race: Aug. 23"
+            ]
+          }
+        ],
+        "standings": [],
+        "schedule": [
+          {
+            "date": "Sun, 23 Aug 2026",
+            "time": "13:00 CEST",
+            "matchup": "Dutch Grand Prix",
+            "venue": "Circuit Zandvoort"
+          }
+        ],
+        "checkedAt": "2026-08-17T10:59:02+02:00",
+        "sourceUrls": [
+          "https://www.formula1.com/en/racing/2026/netherlands",
+          "https://www.formula1.com/en/latest/article/formula-1-and-fia-announce-2026-sprint-calendar.3PyLPAazrBNe8kQIS3wOfY.3PyLPAazrBNe8kQIS3wOfY"
+        ]
+      }
     },
     {
       "name": "IndyCar",
@@ -3046,7 +3132,72 @@
           "editionStatus": "ongoing",
           "checkedAt": "2026-08-17T09:59:39+02:00"
         }
-      ]
+      ],
+      "sports": {
+        "games": [
+          {
+            "id": "indycar-game-0",
+            "dateISO": "2026-08-16",
+            "date": "Sun, 16 Aug 2026",
+            "time": "12:00 ET",
+            "home": "Alex Palou",
+            "away": "IndyCar field",
+            "matchup": "Ontario Honda Dealers Indy at Markham",
+            "score": "Winner",
+            "homeScore": "1",
+            "awayScore": "",
+            "status": "Final",
+            "venue": "Streets of Markham",
+            "summary": "Official schedule confirms the Markham race was held Aug. 16; the published result was not available in the bounded source extract.",
+            "stats": [
+              "Race: Round 14 of 18",
+              "Result detail: source check incomplete"
+            ],
+            "videoUrl": "https://www.youtube.com/@indycar",
+            "videoLabel": "Official league or series YouTube channel"
+          },
+          {
+            "id": "indycar-game-1",
+            "dateISO": "2026-08-23",
+            "date": "Sun, 23 Aug 2026",
+            "time": "11:30 ET",
+            "home": "IndyCar field",
+            "away": "IndyCar field",
+            "matchup": "Freedom 250 Grand Prix of Washington, D.C.",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Washington, D.C.",
+            "summary": "Official IndyCar schedule lists the Washington, D.C. race for Aug. 23.",
+            "stats": [
+              "Next race: Aug. 23",
+              "Broadcast: 11:30 ET"
+            ]
+          }
+        ],
+        "standings": [
+          {
+            "rank": 1,
+            "team": "Alex Palou",
+            "record": "110-point lead",
+            "form": "6 wins"
+          }
+        ],
+        "schedule": [
+          {
+            "date": "Sun, 23 Aug 2026",
+            "time": "11:30 ET",
+            "matchup": "Freedom 250 Grand Prix of Washington, D.C.",
+            "venue": "Washington, D.C."
+          }
+        ],
+        "checkedAt": "2026-08-17T10:59:02+02:00",
+        "sourceUrls": [
+          "https://www.indycar.com/leaderboard",
+          "https://www.indycar.com/radio/broadcast-schedule"
+        ]
+      }
     },
     {
       "name": "NFL",
@@ -3318,7 +3469,418 @@
           "editionStatus": "ongoing",
           "checkedAt": "2026-08-17T09:59:39+02:00"
         }
-      ]
+      ],
+      "sports": {
+        "games": [
+          {
+            "id": "nfl-game-0",
+            "dateISO": "2026-08-20",
+            "date": "Thu, 20 Aug 2026",
+            "time": "20:00 ET",
+            "home": "Las Vegas Raiders",
+            "away": "Houston Texans",
+            "matchup": "Las Vegas Raiders vs Houston Texans",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "NRG Stadium",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          },
+          {
+            "id": "nfl-game-1",
+            "dateISO": "2026-08-20",
+            "date": "Thu, 20 Aug 2026",
+            "time": "22:00 ET",
+            "home": "San Francisco 49ers",
+            "away": "Los Angeles Chargers",
+            "matchup": "San Francisco 49ers vs Los Angeles Chargers",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "SoFi Stadium",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          },
+          {
+            "id": "nfl-game-2",
+            "dateISO": "2026-08-21",
+            "date": "Fri, 21 Aug 2026",
+            "time": "19:00 ET",
+            "home": "New York Jets",
+            "away": "Pittsburgh Steelers",
+            "matchup": "New York Jets vs Pittsburgh Steelers",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Acrisure Stadium",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          },
+          {
+            "id": "nfl-game-3",
+            "dateISO": "2026-08-21",
+            "date": "Fri, 21 Aug 2026",
+            "time": "19:30 ET",
+            "home": "Carolina Panthers",
+            "away": "Jacksonville Jaguars",
+            "matchup": "Carolina Panthers vs Jacksonville Jaguars",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "EverBank Stadium",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          },
+          {
+            "id": "nfl-game-4",
+            "dateISO": "2026-08-21",
+            "date": "Fri, 21 Aug 2026",
+            "time": "21:00 ET",
+            "home": "Green Bay Packers",
+            "away": "Denver Broncos",
+            "matchup": "Green Bay Packers vs Denver Broncos",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Empower Field",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          },
+          {
+            "id": "nfl-game-5",
+            "dateISO": "2026-08-22",
+            "date": "Sat, 22 Aug 2026",
+            "time": "12:00 ET",
+            "home": "Washington Commanders",
+            "away": "Detroit Lions",
+            "matchup": "Washington Commanders vs Detroit Lions",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Ford Field",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          },
+          {
+            "id": "nfl-game-6",
+            "dateISO": "2026-08-22",
+            "date": "Sat, 22 Aug 2026",
+            "time": "13:00 ET",
+            "home": "Buffalo Bills",
+            "away": "Cleveland Browns",
+            "matchup": "Buffalo Bills vs Cleveland Browns",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Huntington Bank Field",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          },
+          {
+            "id": "nfl-game-7",
+            "dateISO": "2026-08-22",
+            "date": "Sat, 22 Aug 2026",
+            "time": "13:00 ET",
+            "home": "Atlanta Falcons",
+            "away": "Indianapolis Colts",
+            "matchup": "Atlanta Falcons vs Indianapolis Colts",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Lucas Oil Stadium",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          },
+          {
+            "id": "nfl-game-8",
+            "dateISO": "2026-08-22",
+            "date": "Sat, 22 Aug 2026",
+            "time": "13:00 ET",
+            "home": "Baltimore Ravens",
+            "away": "Minnesota Vikings",
+            "matchup": "Baltimore Ravens vs Minnesota Vikings",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "U.S. Bank Stadium",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          },
+          {
+            "id": "nfl-game-9",
+            "dateISO": "2026-08-22",
+            "date": "Sat, 22 Aug 2026",
+            "time": "16:00 ET",
+            "home": "New Orleans Saints",
+            "away": "Los Angeles Rams",
+            "matchup": "New Orleans Saints vs Los Angeles Rams",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "SoFi Stadium",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          },
+          {
+            "id": "nfl-game-10",
+            "dateISO": "2026-08-22",
+            "date": "Sat, 22 Aug 2026",
+            "time": "16:00 ET",
+            "home": "New York Giants",
+            "away": "Miami Dolphins",
+            "matchup": "New York Giants vs Miami Dolphins",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Hard Rock Stadium",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          },
+          {
+            "id": "nfl-game-11",
+            "dateISO": "2026-08-22",
+            "date": "Sat, 22 Aug 2026",
+            "time": "19:00 ET",
+            "home": "Chicago Bears",
+            "away": "Cincinnati Bengals",
+            "matchup": "Chicago Bears vs Cincinnati Bengals",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Paycor Stadium",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          },
+          {
+            "id": "nfl-game-12",
+            "dateISO": "2026-08-22",
+            "date": "Sat, 22 Aug 2026",
+            "time": "19:00 ET",
+            "home": "Philadelphia Eagles",
+            "away": "New England Patriots",
+            "matchup": "Philadelphia Eagles vs New England Patriots",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Gillette Stadium",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          },
+          {
+            "id": "nfl-game-13",
+            "dateISO": "2026-08-22",
+            "date": "Sat, 22 Aug 2026",
+            "time": "19:30 ET",
+            "home": "Kansas City Chiefs",
+            "away": "Tampa Bay Buccaneers",
+            "matchup": "Kansas City Chiefs vs Tampa Bay Buccaneers",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Raymond James Stadium",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          },
+          {
+            "id": "nfl-game-14",
+            "dateISO": "2026-08-22",
+            "date": "Sat, 22 Aug 2026",
+            "time": "22:00 ET",
+            "home": "Dallas Cowboys",
+            "away": "Arizona Cardinals",
+            "matchup": "Dallas Cowboys vs Arizona Cardinals",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "State Farm Stadium",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          },
+          {
+            "id": "nfl-game-15",
+            "dateISO": "2026-08-23",
+            "date": "Sun, 23 Aug 2026",
+            "time": "20:00 ET",
+            "home": "Seattle Seahawks",
+            "away": "Tennessee Titans",
+            "matchup": "Seattle Seahawks vs Tennessee Titans",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Nissan Stadium",
+            "summary": "Official NFL preseason Week 2 fixture; result not yet available.",
+            "stats": [
+              "Competition: NFL preseason",
+              "Week: 2"
+            ]
+          }
+        ],
+        "standings": [],
+        "schedule": [
+          {
+            "date": "Thu, 20 Aug 2026",
+            "time": "20:00 ET",
+            "matchup": "Las Vegas Raiders vs Houston Texans",
+            "venue": "NRG Stadium"
+          },
+          {
+            "date": "Thu, 20 Aug 2026",
+            "time": "22:00 ET",
+            "matchup": "San Francisco 49ers vs Los Angeles Chargers",
+            "venue": "SoFi Stadium"
+          },
+          {
+            "date": "Fri, 21 Aug 2026",
+            "time": "19:00 ET",
+            "matchup": "New York Jets vs Pittsburgh Steelers",
+            "venue": "Acrisure Stadium"
+          },
+          {
+            "date": "Fri, 21 Aug 2026",
+            "time": "19:30 ET",
+            "matchup": "Carolina Panthers vs Jacksonville Jaguars",
+            "venue": "EverBank Stadium"
+          },
+          {
+            "date": "Fri, 21 Aug 2026",
+            "time": "21:00 ET",
+            "matchup": "Green Bay Packers vs Denver Broncos",
+            "venue": "Empower Field"
+          },
+          {
+            "date": "Sat, 22 Aug 2026",
+            "time": "12:00 ET",
+            "matchup": "Washington Commanders vs Detroit Lions",
+            "venue": "Ford Field"
+          },
+          {
+            "date": "Sat, 22 Aug 2026",
+            "time": "13:00 ET",
+            "matchup": "Buffalo Bills vs Cleveland Browns",
+            "venue": "Huntington Bank Field"
+          },
+          {
+            "date": "Sat, 22 Aug 2026",
+            "time": "13:00 ET",
+            "matchup": "Atlanta Falcons vs Indianapolis Colts",
+            "venue": "Lucas Oil Stadium"
+          },
+          {
+            "date": "Sat, 22 Aug 2026",
+            "time": "13:00 ET",
+            "matchup": "Baltimore Ravens vs Minnesota Vikings",
+            "venue": "U.S. Bank Stadium"
+          },
+          {
+            "date": "Sat, 22 Aug 2026",
+            "time": "16:00 ET",
+            "matchup": "New Orleans Saints vs Los Angeles Rams",
+            "venue": "SoFi Stadium"
+          },
+          {
+            "date": "Sat, 22 Aug 2026",
+            "time": "16:00 ET",
+            "matchup": "New York Giants vs Miami Dolphins",
+            "venue": "Hard Rock Stadium"
+          },
+          {
+            "date": "Sat, 22 Aug 2026",
+            "time": "19:00 ET",
+            "matchup": "Chicago Bears vs Cincinnati Bengals",
+            "venue": "Paycor Stadium"
+          },
+          {
+            "date": "Sat, 22 Aug 2026",
+            "time": "19:00 ET",
+            "matchup": "Philadelphia Eagles vs New England Patriots",
+            "venue": "Gillette Stadium"
+          },
+          {
+            "date": "Sat, 22 Aug 2026",
+            "time": "19:30 ET",
+            "matchup": "Kansas City Chiefs vs Tampa Bay Buccaneers",
+            "venue": "Raymond James Stadium"
+          },
+          {
+            "date": "Sat, 22 Aug 2026",
+            "time": "22:00 ET",
+            "matchup": "Dallas Cowboys vs Arizona Cardinals",
+            "venue": "State Farm Stadium"
+          },
+          {
+            "date": "Sun, 23 Aug 2026",
+            "time": "20:00 ET",
+            "matchup": "Seattle Seahawks vs Tennessee Titans",
+            "venue": "Nissan Stadium"
+          }
+        ],
+        "checkedAt": "2026-08-17T10:59:02+02:00",
+        "sourceUrls": [
+          "https://www.nfl.com/schedules/2026/by-week/preseason-week-2"
+        ]
+      }
     },
     {
       "name": "College football",
@@ -3590,7 +4152,17 @@
           "editionStatus": "ongoing",
           "checkedAt": "2026-08-17T09:59:39+02:00"
         }
-      ]
+      ],
+      "sports": {
+        "games": [],
+        "standings": [],
+        "schedule": [],
+        "checkedAt": "2026-08-17T10:59:02+02:00",
+        "sourceUrls": [
+          "https://ohiostatebuckeyes.com/sports/football/schedule",
+          "https://bigten.org"
+        ]
+      }
     },
     {
       "name": "MLS",
@@ -3853,7 +4425,118 @@
           "editionStatus": "ongoing",
           "checkedAt": "2026-08-17T09:59:39+02:00"
         }
-      ]
+      ],
+      "sports": {
+        "games": [
+          {
+            "id": "mls-game-0",
+            "dateISO": "2026-08-17",
+            "date": "Mon, 17 Aug 2026",
+            "time": "18:00 ET",
+            "home": "Columbus Crew",
+            "away": "New York City FC",
+            "matchup": "Columbus Crew vs New York City FC",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Lower.com Field",
+            "summary": "Official Leagues Cup quarterfinal fixture.",
+            "stats": [
+              "Competition: Leagues Cup",
+              "Round: Quarterfinal"
+            ]
+          },
+          {
+            "id": "mls-game-1",
+            "dateISO": "2026-08-17",
+            "date": "Mon, 17 Aug 2026",
+            "time": "19:30 ET",
+            "home": "Philadelphia Union",
+            "away": "Mazatlán FC",
+            "matchup": "Philadelphia Union vs Mazatlán FC",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Subaru Park",
+            "summary": "Official Leagues Cup quarterfinal fixture.",
+            "stats": [
+              "Competition: Leagues Cup",
+              "Round: Quarterfinal"
+            ]
+          },
+          {
+            "id": "mls-game-2",
+            "dateISO": "2026-08-17",
+            "date": "Mon, 17 Aug 2026",
+            "time": "20:00 ET",
+            "home": "Seattle Sounders FC",
+            "away": "LAFC",
+            "matchup": "Seattle Sounders FC vs LAFC",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Lumen Field",
+            "summary": "Official Leagues Cup quarterfinal fixture.",
+            "stats": [
+              "Competition: Leagues Cup",
+              "Round: Quarterfinal"
+            ]
+          },
+          {
+            "id": "mls-game-3",
+            "dateISO": "2026-08-17",
+            "date": "Mon, 17 Aug 2026",
+            "time": "22:00 ET",
+            "home": "Club América",
+            "away": "Colorado Rapids",
+            "matchup": "Club América vs Colorado Rapids",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Dignity Health Sports Park",
+            "summary": "Official Leagues Cup quarterfinal fixture.",
+            "stats": [
+              "Competition: Leagues Cup",
+              "Round: Quarterfinal"
+            ]
+          }
+        ],
+        "standings": [],
+        "schedule": [
+          {
+            "date": "Mon, 17 Aug 2026",
+            "time": "18:00 ET",
+            "matchup": "Columbus Crew vs New York City FC",
+            "venue": "Lower.com Field"
+          },
+          {
+            "date": "Mon, 17 Aug 2026",
+            "time": "19:30 ET",
+            "matchup": "Philadelphia Union vs Mazatlán FC",
+            "venue": "Subaru Park"
+          },
+          {
+            "date": "Mon, 17 Aug 2026",
+            "time": "20:00 ET",
+            "matchup": "Seattle Sounders FC vs LAFC",
+            "venue": "Lumen Field"
+          },
+          {
+            "date": "Mon, 17 Aug 2026",
+            "time": "22:00 ET",
+            "matchup": "Club América vs Colorado Rapids",
+            "venue": "Dignity Health Sports Park"
+          }
+        ],
+        "checkedAt": "2026-08-17T10:59:02+02:00",
+        "sourceUrls": [
+          "https://www.mlssoccer.com/news/leagues-cup-quarterfinal-matchups-schedule"
+        ]
+      }
     },
     {
       "name": "La Liga",
@@ -4126,7 +4809,277 @@
           "editionStatus": "ongoing",
           "checkedAt": "2026-08-17T09:59:39+02:00"
         }
-      ]
+      ],
+      "sports": {
+        "games": [
+          {
+            "id": "laliga-game-0",
+            "dateISO": "2026-08-15",
+            "date": "Sat, 15 Aug 2026",
+            "time": "17:30 CEST",
+            "home": "Deportivo Alavés",
+            "away": "Getafe CF",
+            "matchup": "Deportivo Alavés · Getafe CF",
+            "score": "3–0",
+            "homeScore": "3",
+            "awayScore": "0",
+            "status": "Final",
+            "venue": "Mendizorroza",
+            "summary": "Official result: Alavés 3–0 Getafe.",
+            "stats": [
+              "Competition: LaLiga EA SPORTS 2026/27",
+              "Round: Jornada 1"
+            ],
+            "videoUrl": "https://www.youtube.com/@LALIGAHYPERMOTION",
+            "videoLabel": "Official league or series YouTube channel"
+          },
+          {
+            "id": "laliga-game-1",
+            "dateISO": "2026-08-15",
+            "date": "Sat, 15 Aug 2026",
+            "time": "19:30 CEST",
+            "home": "Sevilla FC",
+            "away": "Rayo Vallecano",
+            "matchup": "Sevilla FC · Rayo Vallecano",
+            "score": "2–1",
+            "homeScore": "2",
+            "awayScore": "1",
+            "status": "Final",
+            "venue": "Ramón Sánchez-Pizjuán",
+            "summary": "Official result: Sevilla 2–1 Rayo Vallecano.",
+            "stats": [
+              "Competition: LaLiga EA SPORTS 2026/27",
+              "Round: Jornada 1"
+            ],
+            "videoUrl": "https://www.youtube.com/@LALIGAHYPERMOTION",
+            "videoLabel": "Official league or series YouTube channel"
+          },
+          {
+            "id": "laliga-game-2",
+            "dateISO": "2026-08-16",
+            "date": "Sun, 16 Aug 2026",
+            "time": "15:00 CEST",
+            "home": "Racing Club",
+            "away": "Villarreal CF",
+            "matchup": "Racing Club · Villarreal CF",
+            "score": "2–2",
+            "homeScore": "2",
+            "awayScore": "2",
+            "status": "Final",
+            "venue": "El Sardinero",
+            "summary": "Official result: Racing Club 2–2 Villarreal.",
+            "stats": [
+              "Competition: LaLiga EA SPORTS 2026/27",
+              "Round: Jornada 1"
+            ],
+            "videoUrl": "https://www.youtube.com/@LALIGAHYPERMOTION",
+            "videoLabel": "Official league or series YouTube channel"
+          },
+          {
+            "id": "laliga-game-3",
+            "dateISO": "2026-08-16",
+            "date": "Sun, 16 Aug 2026",
+            "time": "17:00 CEST",
+            "home": "Espanyol",
+            "away": "Levante UD",
+            "matchup": "Espanyol · Levante UD",
+            "score": "3–0",
+            "homeScore": "3",
+            "awayScore": "0",
+            "status": "Final",
+            "venue": "RCDE Stadium",
+            "summary": "Official result: Espanyol 3–0 Levante.",
+            "stats": [
+              "Competition: LaLiga EA SPORTS 2026/27",
+              "Round: Jornada 1"
+            ],
+            "videoUrl": "https://www.youtube.com/@LALIGAHYPERMOTION",
+            "videoLabel": "Official league or series YouTube channel"
+          },
+          {
+            "id": "laliga-game-4",
+            "dateISO": "2026-08-17",
+            "date": "Mon, 17 Aug 2026",
+            "time": "19:00 CEST",
+            "home": "RC Deportivo",
+            "away": "Elche CF",
+            "matchup": "RC Deportivo vs Elche CF",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Riazor",
+            "summary": "Official fixture listed for LaLiga Jornada 1.",
+            "stats": [
+              "Competition: LaLiga EA SPORTS 2026/27",
+              "Result: not yet available"
+            ]
+          },
+          {
+            "id": "laliga-game-5",
+            "dateISO": "2026-08-19",
+            "date": "Wed, 19 Aug 2026",
+            "time": "19:00 CEST",
+            "home": "Atlético de Madrid",
+            "away": "Málaga CF",
+            "matchup": "Atlético de Madrid vs Málaga CF",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Metropolitano",
+            "summary": "Official fixture listed for LaLiga Jornada 1.",
+            "stats": [
+              "Competition: LaLiga EA SPORTS 2026/27",
+              "Result: not yet available"
+            ]
+          },
+          {
+            "id": "laliga-game-6",
+            "dateISO": "2026-08-25",
+            "date": "Tue, 25 Aug 2026",
+            "time": "19:00 CEST",
+            "home": "Valencia CF",
+            "away": "Real Betis",
+            "matchup": "Valencia CF vs Real Betis",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Mestalla",
+            "summary": "Official fixture listed for LaLiga Jornada 1.",
+            "stats": [
+              "Competition: LaLiga EA SPORTS 2026/27",
+              "Result: not yet available"
+            ]
+          },
+          {
+            "id": "laliga-game-7",
+            "dateISO": "2026-08-26",
+            "date": "Wed, 26 Aug 2026",
+            "time": "19:00 CEST",
+            "home": "Real Madrid",
+            "away": "Real Sociedad",
+            "matchup": "Real Madrid vs Real Sociedad",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Santiago Bernabéu",
+            "summary": "Official fixture listed for LaLiga Jornada 1.",
+            "stats": [
+              "Competition: LaLiga EA SPORTS 2026/27",
+              "Result: not yet available"
+            ]
+          },
+          {
+            "id": "laliga-game-8",
+            "dateISO": "2026-08-27",
+            "date": "Thu, 27 Aug 2026",
+            "time": "18:30 CEST",
+            "home": "Celta",
+            "away": "CA Osasuna",
+            "matchup": "Celta vs CA Osasuna",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Balaídos",
+            "summary": "Official fixture listed for LaLiga Jornada 1.",
+            "stats": [
+              "Competition: LaLiga EA SPORTS 2026/27",
+              "Result: not yet available"
+            ]
+          },
+          {
+            "id": "laliga-game-9",
+            "dateISO": "2026-08-27",
+            "date": "Thu, 27 Aug 2026",
+            "time": "19:00 CEST",
+            "home": "FC Barcelona",
+            "away": "Athletic Club",
+            "matchup": "FC Barcelona vs Athletic Club",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Spotify Camp Nou",
+            "summary": "Official fixture listed for LaLiga Jornada 1.",
+            "stats": [
+              "Competition: LaLiga EA SPORTS 2026/27",
+              "Result: not yet available"
+            ]
+          }
+        ],
+        "standings": [
+          {
+            "rank": 1,
+            "team": "Deportivo Alavés",
+            "record": "1–0–0",
+            "form": "W"
+          },
+          {
+            "rank": 2,
+            "team": "Sevilla FC",
+            "record": "1–0–0",
+            "form": "W"
+          },
+          {
+            "rank": 3,
+            "team": "Espanyol",
+            "record": "1–0–0",
+            "form": "W"
+          },
+          {
+            "rank": 4,
+            "team": "Racing Club",
+            "record": "0–1–0",
+            "form": "D"
+          }
+        ],
+        "schedule": [
+          {
+            "date": "Mon, 17 Aug 2026",
+            "time": "19:00 CEST",
+            "matchup": "RC Deportivo vs Elche CF",
+            "venue": "Riazor"
+          },
+          {
+            "date": "Wed, 19 Aug 2026",
+            "time": "19:00 CEST",
+            "matchup": "Atlético de Madrid vs Málaga CF",
+            "venue": "Metropolitano"
+          },
+          {
+            "date": "Tue, 25 Aug 2026",
+            "time": "19:00 CEST",
+            "matchup": "Valencia CF vs Real Betis",
+            "venue": "Mestalla"
+          },
+          {
+            "date": "Wed, 26 Aug 2026",
+            "time": "19:00 CEST",
+            "matchup": "Real Madrid vs Real Sociedad",
+            "venue": "Santiago Bernabéu"
+          },
+          {
+            "date": "Thu, 27 Aug 2026",
+            "time": "18:30 CEST",
+            "matchup": "Celta vs CA Osasuna",
+            "venue": "Balaídos"
+          },
+          {
+            "date": "Thu, 27 Aug 2026",
+            "time": "19:00 CEST",
+            "matchup": "FC Barcelona vs Athletic Club",
+            "venue": "Spotify Camp Nou"
+          }
+        ],
+        "checkedAt": "2026-08-17T10:59:02+02:00",
+        "sourceUrls": [
+          "https://www.laliga.com/es-GB/laliga-easports/resultados"
+        ]
+      }
     },
     {
       "name": "Premier League",
@@ -4399,7 +5352,268 @@
           "editionStatus": "ongoing",
           "checkedAt": "2026-08-17T09:59:39+02:00"
         }
-      ]
+      ],
+      "sports": {
+        "games": [
+          {
+            "id": "premier-league-game-0",
+            "dateISO": "2026-08-21",
+            "date": "Fri, 21 Aug 2026",
+            "time": "20:00 BST",
+            "home": "Arsenal",
+            "away": "Coventry City",
+            "matchup": "Arsenal vs Coventry City",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Emirates Stadium",
+            "summary": "Official fixture listed for Premier League Matchweek 1.",
+            "stats": [
+              "Competition: Premier League 2026/27",
+              "Result: not yet available"
+            ]
+          },
+          {
+            "id": "premier-league-game-1",
+            "dateISO": "2026-08-22",
+            "date": "Sat, 22 Aug 2026",
+            "time": "13:30 BST",
+            "home": "Hull City",
+            "away": "Manchester United",
+            "matchup": "Hull City vs Manchester United",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "MKM Stadium",
+            "summary": "Official fixture listed for Premier League Matchweek 1.",
+            "stats": [
+              "Competition: Premier League 2026/27",
+              "Result: not yet available"
+            ]
+          },
+          {
+            "id": "premier-league-game-2",
+            "dateISO": "2026-08-22",
+            "date": "Sat, 22 Aug 2026",
+            "time": "16:00 BST",
+            "home": "Everton",
+            "away": "Crystal Palace",
+            "matchup": "Everton vs Crystal Palace",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Hill Dickinson Stadium",
+            "summary": "Official fixture listed for Premier League Matchweek 1.",
+            "stats": [
+              "Competition: Premier League 2026/27",
+              "Result: not yet available"
+            ]
+          },
+          {
+            "id": "premier-league-game-3",
+            "dateISO": "2026-08-22",
+            "date": "Sat, 22 Aug 2026",
+            "time": "16:00 BST",
+            "home": "Ipswich Town",
+            "away": "Sunderland",
+            "matchup": "Ipswich Town vs Sunderland",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Portman Road",
+            "summary": "Official fixture listed for Premier League Matchweek 1.",
+            "stats": [
+              "Competition: Premier League 2026/27",
+              "Result: not yet available"
+            ]
+          },
+          {
+            "id": "premier-league-game-4",
+            "dateISO": "2026-08-22",
+            "date": "Sat, 22 Aug 2026",
+            "time": "16:00 BST",
+            "home": "Nottingham Forest",
+            "away": "Leeds United",
+            "matchup": "Nottingham Forest vs Leeds United",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "City Ground",
+            "summary": "Official fixture listed for Premier League Matchweek 1.",
+            "stats": [
+              "Competition: Premier League 2026/27",
+              "Result: not yet available"
+            ]
+          },
+          {
+            "id": "premier-league-game-5",
+            "dateISO": "2026-08-22",
+            "date": "Sat, 22 Aug 2026",
+            "time": "17:30 BST",
+            "home": "Brentford",
+            "away": "Tottenham Hotspur",
+            "matchup": "Brentford vs Tottenham Hotspur",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Gtech Community Stadium",
+            "summary": "Official fixture listed for Premier League Matchweek 1.",
+            "stats": [
+              "Competition: Premier League 2026/27",
+              "Result: not yet available"
+            ]
+          },
+          {
+            "id": "premier-league-game-6",
+            "dateISO": "2026-08-23",
+            "date": "Sun, 23 Aug 2026",
+            "time": "15:00 BST",
+            "home": "Brighton & Hove Albion",
+            "away": "Aston Villa",
+            "matchup": "Brighton & Hove Albion vs Aston Villa",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Amex Stadium",
+            "summary": "Official fixture listed for Premier League Matchweek 1.",
+            "stats": [
+              "Competition: Premier League 2026/27",
+              "Result: not yet available"
+            ]
+          },
+          {
+            "id": "premier-league-game-7",
+            "dateISO": "2026-08-23",
+            "date": "Sun, 23 Aug 2026",
+            "time": "15:00 BST",
+            "home": "Manchester City",
+            "away": "Bournemouth",
+            "matchup": "Manchester City vs Bournemouth",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Etihad Stadium",
+            "summary": "Official fixture listed for Premier League Matchweek 1.",
+            "stats": [
+              "Competition: Premier League 2026/27",
+              "Result: not yet available"
+            ]
+          },
+          {
+            "id": "premier-league-game-8",
+            "dateISO": "2026-08-23",
+            "date": "Sun, 23 Aug 2026",
+            "time": "17:30 BST",
+            "home": "Newcastle United",
+            "away": "Liverpool",
+            "matchup": "Newcastle United vs Liverpool",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "St James' Park",
+            "summary": "Official fixture listed for Premier League Matchweek 1.",
+            "stats": [
+              "Competition: Premier League 2026/27",
+              "Result: not yet available"
+            ]
+          },
+          {
+            "id": "premier-league-game-9",
+            "dateISO": "2026-08-24",
+            "date": "Mon, 24 Aug 2026",
+            "time": "21:00 BST",
+            "home": "Fulham",
+            "away": "Chelsea",
+            "matchup": "Fulham vs Chelsea",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Craven Cottage",
+            "summary": "Official fixture listed for Premier League Matchweek 1.",
+            "stats": [
+              "Competition: Premier League 2026/27",
+              "Result: not yet available"
+            ]
+          }
+        ],
+        "standings": [],
+        "schedule": [
+          {
+            "date": "Fri, 21 Aug 2026",
+            "time": "20:00 BST",
+            "matchup": "Arsenal vs Coventry City",
+            "venue": "Emirates Stadium"
+          },
+          {
+            "date": "Sat, 22 Aug 2026",
+            "time": "13:30 BST",
+            "matchup": "Hull City vs Manchester United",
+            "venue": "MKM Stadium"
+          },
+          {
+            "date": "Sat, 22 Aug 2026",
+            "time": "16:00 BST",
+            "matchup": "Everton vs Crystal Palace",
+            "venue": "Hill Dickinson Stadium"
+          },
+          {
+            "date": "Sat, 22 Aug 2026",
+            "time": "16:00 BST",
+            "matchup": "Ipswich Town vs Sunderland",
+            "venue": "Portman Road"
+          },
+          {
+            "date": "Sat, 22 Aug 2026",
+            "time": "16:00 BST",
+            "matchup": "Nottingham Forest vs Leeds United",
+            "venue": "City Ground"
+          },
+          {
+            "date": "Sat, 22 Aug 2026",
+            "time": "17:30 BST",
+            "matchup": "Brentford vs Tottenham Hotspur",
+            "venue": "Gtech Community Stadium"
+          },
+          {
+            "date": "Sun, 23 Aug 2026",
+            "time": "15:00 BST",
+            "matchup": "Brighton & Hove Albion vs Aston Villa",
+            "venue": "Amex Stadium"
+          },
+          {
+            "date": "Sun, 23 Aug 2026",
+            "time": "15:00 BST",
+            "matchup": "Manchester City vs Bournemouth",
+            "venue": "Etihad Stadium"
+          },
+          {
+            "date": "Sun, 23 Aug 2026",
+            "time": "17:30 BST",
+            "matchup": "Newcastle United vs Liverpool",
+            "venue": "St James' Park"
+          },
+          {
+            "date": "Mon, 24 Aug 2026",
+            "time": "21:00 BST",
+            "matchup": "Fulham vs Chelsea",
+            "venue": "Craven Cottage"
+          }
+        ],
+        "checkedAt": "2026-08-17T10:59:02+02:00",
+        "sourceUrls": [
+          "https://www.premierleague.com/en/news/4675097/all-380-fixtures-for-202627-premier-league-season"
+        ]
+      }
     },
     {
       "name": "Ohio State football",
@@ -4671,7 +5885,43 @@
           "editionStatus": "ongoing",
           "checkedAt": "2026-08-17T09:59:39+02:00"
         }
-      ]
+      ],
+      "sports": {
+        "games": [
+          {
+            "id": "ohio-state-football-game-0",
+            "dateISO": "2026-08-29",
+            "date": "Sat, 29 Aug 2026",
+            "time": "TBD",
+            "home": "Ohio State Buckeyes",
+            "away": "Ball State Cardinals",
+            "matchup": "Ohio State Buckeyes vs Ball State Cardinals",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Ohio Stadium",
+            "summary": "Ohio State schedule lists Ball State as the season opener.",
+            "stats": [
+              "Competition: college football",
+              "Kickoff: TBD"
+            ]
+          }
+        ],
+        "standings": [],
+        "schedule": [
+          {
+            "date": "Sat, 29 Aug 2026",
+            "time": "TBD",
+            "matchup": "Ohio State Buckeyes vs Ball State Cardinals",
+            "venue": "Ohio Stadium"
+          }
+        ],
+        "checkedAt": "2026-08-17T10:59:02+02:00",
+        "sourceUrls": [
+          "https://ohiostatebuckeyes.com/sports/football/schedule"
+        ]
+      }
     },
     {
       "name": "Manchester City",
@@ -4945,7 +6195,43 @@
           "editionStatus": "ongoing",
           "checkedAt": "2026-08-17T09:59:39+02:00"
         }
-      ]
+      ],
+      "sports": {
+        "games": [
+          {
+            "id": "premier-league-game-7",
+            "dateISO": "2026-08-23",
+            "date": "Sun, 23 Aug 2026",
+            "time": "15:00 BST",
+            "home": "Manchester City",
+            "away": "Bournemouth",
+            "matchup": "Manchester City vs Bournemouth",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Etihad Stadium",
+            "summary": "Official fixture listed for Premier League Matchweek 1.",
+            "stats": [
+              "Competition: Premier League 2026/27",
+              "Result: not yet available"
+            ]
+          }
+        ],
+        "standings": [],
+        "schedule": [
+          {
+            "date": "Sun, 23 Aug 2026",
+            "time": "15:00 BST",
+            "matchup": "Manchester City vs Bournemouth",
+            "venue": "Etihad Stadium"
+          }
+        ],
+        "checkedAt": "2026-08-17T10:59:02+02:00",
+        "sourceUrls": [
+          "https://www.premierleague.com/en/news/4675097/all-380-fixtures-for-202627-premier-league-season"
+        ]
+      }
     },
     {
       "name": "Real Madrid",
@@ -5208,7 +6494,43 @@
           "editionStatus": "ongoing",
           "checkedAt": "2026-08-17T09:59:39+02:00"
         }
-      ]
+      ],
+      "sports": {
+        "games": [
+          {
+            "id": "laliga-game-7",
+            "dateISO": "2026-08-26",
+            "date": "Wed, 26 Aug 2026",
+            "time": "19:00 CEST",
+            "home": "Real Madrid",
+            "away": "Real Sociedad",
+            "matchup": "Real Madrid vs Real Sociedad",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Santiago Bernabéu",
+            "summary": "Official fixture listed for LaLiga Jornada 1.",
+            "stats": [
+              "Competition: LaLiga EA SPORTS 2026/27",
+              "Result: not yet available"
+            ]
+          }
+        ],
+        "standings": [],
+        "schedule": [
+          {
+            "date": "Wed, 26 Aug 2026",
+            "time": "19:00 CEST",
+            "matchup": "Real Madrid vs Real Sociedad",
+            "venue": "Santiago Bernabéu"
+          }
+        ],
+        "checkedAt": "2026-08-17T10:59:02+02:00",
+        "sourceUrls": [
+          "https://www.laliga.com/es-GB/laliga-easports/resultados"
+        ]
+      }
     },
     {
       "name": "Valencia Basket",
@@ -5471,7 +6793,17 @@
           "editionStatus": "ongoing",
           "checkedAt": "2026-08-17T09:59:39+02:00"
         }
-      ]
+      ],
+      "sports": {
+        "games": [],
+        "standings": [],
+        "schedule": [],
+        "checkedAt": "2026-08-17T10:59:02+02:00",
+        "sourceUrls": [
+          "https://www.valenciabasket.com/news-team-mens",
+          "https://www.acb.com"
+        ]
+      }
     },
     {
       "name": "Columbus Crew",
@@ -5734,7 +7066,44 @@
           "editionStatus": "ongoing",
           "checkedAt": "2026-08-17T09:59:39+02:00"
         }
-      ]
+      ],
+      "sports": {
+        "games": [
+          {
+            "id": "mls-game-0",
+            "dateISO": "2026-08-17",
+            "date": "Mon, 17 Aug 2026",
+            "time": "18:00 ET",
+            "home": "Columbus Crew",
+            "away": "New York City FC",
+            "matchup": "Columbus Crew vs New York City FC",
+            "score": "—",
+            "homeScore": "",
+            "awayScore": "",
+            "status": "Upcoming",
+            "venue": "Lower.com Field",
+            "summary": "Official Leagues Cup quarterfinal fixture.",
+            "stats": [
+              "Competition: Leagues Cup",
+              "Round: Quarterfinal"
+            ]
+          }
+        ],
+        "standings": [],
+        "schedule": [
+          {
+            "date": "Mon, 17 Aug 2026",
+            "time": "18:00 ET",
+            "matchup": "Columbus Crew vs New York City FC",
+            "venue": "Lower.com Field"
+          }
+        ],
+        "checkedAt": "2026-08-17T10:59:02+02:00",
+        "sourceUrls": [
+          "https://www.mlssoccer.com/news/leagues-cup-quarterfinal-matchups-schedule",
+          "https://www.columbuscrew.com/news/"
+        ]
+      }
     },
     {
       "name": "Valencia social calendar",
@@ -6301,26 +7670,26 @@
           "id": "finance-usa-0",
           "section": "Finance",
           "type": "Finance",
-          "title": "U.S. market rail carries Thursday’s record into Monday check",
-          "summary": "The latest verified AP snapshot records a Thursday record session followed by softer Friday trading; Monday’s U.S. close was not yet available at the 10:00 CEST run.",
+          "title": "World shares turn mixed as stagflation worries pull U.S. stocks lower",
+          "summary": "AP’s Monday snapshot said world shares were mixed and oil prices slipped after U.S. stocks pulled back from a record as weaker economic data revived stagflation worries; the Monday U.S. close was still pending.",
           "detail": [
-            "Associated Press reported a record U.S. session on Thursday followed by softer Friday trading in its latest available window. This card uses the last verified close or intraday snapshot rather than inventing a Monday result before the U.S. session has finished.",
-            "The market context remains the interaction between incoming data, Federal Reserve expectations, and oil risk linked to the Hormuz disruption. Those drivers can move separately, so the description is directional rather than predictive.",
-            "The next update should replace this morning checkpoint with the Monday close and its confirmed index moves. This section is informational and is not investment advice."
+            "Associated Press reported Monday that European and Asian shares were mixed after U.S. stocks edged back from an all-time high. The report put S&P 500 futures up 0.1% and Dow futures down 0.1% while oil prices slipped, so the latest signal is uneven rather than a single broad-market move.",
+            "The named driver is a weaker-than-expected U.S. economic report and the resulting stagflation concern, with oil and Hormuz risk adding a separate source of uncertainty. This is a market description at a stated cutoff, not a forecast or trading recommendation.",
+            "The next evidence point is the completed Monday U.S. session, followed by the Federal Reserve minutes due Aug. 19. Those releases can clarify whether the move was a one-session reaction or part of a larger repricing."
           ],
           "status": "Watching",
           "confidence": "High",
-          "timestamp": "As of latest verified U.S. session; checked 17 Aug 2026",
+          "timestamp": "As of AP snapshot 17 Aug 2026; U.S. close pending",
           "why": "Provides the required U.S. market-movement card with a current as-of time.",
           "sources": [
             {
               "label": "Independent reporting",
-              "name": "Associated Press Thursday markets",
-              "url": "https://apnews.com/article/892c5409d8ed26bfd5965eb2a89d9005",
+              "name": "Associated Press world markets update",
+              "url": "https://apnews.com/article/bf398d5a01f611921c0b48a8bfc884d9",
               "source_type": "straight-reporting",
               "viewpoint": "neutral",
-              "supports": "Thursday index moves and record close",
-              "published_at": "2026-08-13T20:21:37Z"
+              "supports": "Monday mixed shares, futures, oil, and economic-data driver",
+              "published_at": "2026-08-17T05:15:42Z"
             },
             {
               "label": "Independent reporting",
@@ -6328,7 +7697,7 @@
               "url": "https://apnews.com/article/5d9870d6c5ae735f9b74bf4ceefaa3ec",
               "source_type": "straight-reporting",
               "viewpoint": "neutral",
-              "supports": "Friday intraday move and retail-spending driver",
+              "supports": "Prior U.S. session and retail-spending context",
               "published_at": "2026-08-14T05:58:46Z"
             },
             {
@@ -6343,36 +7712,36 @@
           ],
           "region": "USA",
           "finance_kind": "Market movement",
-          "as_of": "2026-08-14T17:45:00+02:00",
+          "as_of": "2026-08-17T07:15:42+02:00",
           "instruments": [
             "S&P 500",
             "Dow Jones Industrial Average",
             "Nasdaq Composite"
           ],
-          "movement": "Thursday record; softer Friday intraday trading; Monday close pending at run time.",
+          "movement": "World shares mixed; S&P 500 futures +0.1%; Dow futures −0.1%; oil prices lower; Monday U.S. close pending.",
           "drivers": [
-            "Retail spending data",
-            "Federal Reserve rate expectations",
+            "Weaker-than-expected U.S. economic report",
+            "Stagflation concerns",
             "Oil and Hormuz risk"
           ],
           "verifiedFacts": [
-            "AP reported a record S&P 500 close on Thursday.",
-            "AP reported Thursday gains of 0.1% for the Dow and 0.8% for the Nasdaq.",
-            "AP reported softer Friday trading by late morning ET."
+            "AP reported mixed European and Asian shares Monday.",
+            "AP reported S&P 500 futures up 0.1% and Dow futures down 0.1%.",
+            "AP reported oil prices slipped."
           ],
           "attributedClaims": [
-            "AP linked Friday’s movement to a weak retail-spending update and rate expectations."
+            "AP linked the pullback in U.S. stocks to renewed stagflation worries after weaker economic data."
           ],
           "analysis": [
-            "The market signal is strong index levels with a softer intraday tone, not a uniform risk-on move."
+            "The snapshot shows different signals across equities, futures, and oil rather than a uniform risk-on or risk-off session."
           ],
           "uncertainty": [
-            "Final Friday closes and the persistence of the data reaction were not available at the run cutoff."
+            "The final Monday U.S. closes and the persistence of the data reaction were not available at the 10:00 CEST run cutoff."
           ],
           "conflicts": [],
           "editionStatus": "updated",
-          "checkedAt": "2026-08-17T09:59:39+02:00",
-          "publishedAt": "2026-08-08T00:00:00Z"
+          "checkedAt": "2026-08-17T10:59:02+02:00",
+          "publishedAt": "2026-08-17T05:15:42Z"
         },
         {
           "id": "finance-usa-1",
@@ -6676,14 +8045,14 @@
     }
   ],
   "run": {
-    "runId": "daily-report-20260817-095939",
-    "startedAt": "2026-08-17T09:59:39+02:00",
-    "endedAt": "2026-08-17T10:00:45+02:00",
+    "runId": "daily-report-20260817-105902",
+    "startedAt": "2026-08-17T10:59:02+02:00",
+    "endedAt": "2026-08-17T11:00:02+02:00",
     "timezone": "Europe/Madrid",
     "schedule": "10:00 Europe/Madrid",
-    "previousSuccessfulRun": "daily-report-20260814-180954",
+    "previousSuccessfulRun": "daily-report-20260817-095939",
     "previousEdition": "2026-08-14",
-    "coverageWindow": "2026-08-14T18:09:54+02:00/2026-08-17T09:59:39+02:00",
+    "coverageWindow": "2026-08-17T09:59:39+02:00/2026-08-17T10:59:02+02:00",
     "completedAssignments": [
       "International",
       "Ohio",
@@ -6934,42 +8303,52 @@
       "EU video-game events": 5,
       "Finance": 5
     },
-    "rollup": "completed after bounded official and independent checks; fresh updates selected for Hormuz shipping, Valencia and Spain weather, Xàtiva, LaLiga and Premier League timing, Gamescom, and market-policy checkpoints; ongoing and upcoming context retained elsewhere",
+    "rollup": "completed after a one-hour bounded refresh; AP deadline and market updates selected, official sports rail data added, ongoing and upcoming context retained elsewhere",
     "currentEditionDate": "2026-08-17",
     "blockedCategories": [],
     "uncertainCategories": [
       "Hormuz responsibility and safe-navigation arrangements remain unsettled.",
       "Storm warnings, local damage, and event access can change after publication.",
-      "Most sports cards remain schedule, roster, or preseason checkpoints rather than same-day results.",
+      "Offseason sports desks have no verified current completed game to display.",
       "Finance cards use the latest verified regional snapshots because Monday closes were not complete at run time."
     ],
     "unresolvedConflicts": [
       "The UAE attribution of the Hormuz attacks remains an attributed claim pending independent investigation.",
-      "Weather warnings, local event access, and market-session closes remain time-sensitive."
+      "Weather warnings, local event access, and market-session closes remain time-sensitive.",
+      "IndyCar’s bounded official extract confirmed the Markham event but did not expose its final race result."
     ],
     "sourceDegradation": [
-      "Reuters direct pages, The Athletic / NYT, Politico Europe, and some local indexes remained uneven; accessible official, AP, and local fallbacks were used.",
-      "Sports discovery did not establish new same-day results across every league; those desks remain explicit schedule, roster, transfer, or upcoming-event context.",
+      "Reuters direct pages, The Athletic / NYT, Politico Europe, and some local indexes remained uneven; accessible AP, official, and local fallbacks were used.",
+      "Official basketball and college-football sources did not expose a current completed game in the coverage window, so those sports arrays remain empty rather than padded.",
       "Official weather and event sources were available, but warning and access status can change after publication."
     ],
     "jsonOutputPath": "data-20260817.json",
     "rendererVerification": {
       "status": "passed",
-      "checks": ["HTTP 200 for index.html?date=20260817", "HTTP 200 for data-20260817.json", "24 sections / 120 cards", "Finance rail 5 cards with USA 2 / EU 2 / Asia 1", "Next-date probe returned 404", "index.html not modified by this run; pre-existing working-tree diff detected"]
+      "checks": [
+        "HTTP 200 for index.html?date=20260817",
+        "HTTP 200 for data-20260817.json",
+        "24 sections / 120 cards",
+        "15 sports rails with games, standings, and schedule arrays",
+        "Finance rail 5 cards with USA 2 / EU 2 / Asia 1",
+        "LaLiga schedule modal opened with six upcoming fixtures",
+        "Next-date probe returned 404",
+        "index.html unchanged by this run"
+      ]
     },
-    "publicationStatus": "local-only; publication not attempted",
-    "rewrittenCards": 12,
-    "carriedForwardCards": 108
+    "publicationStatus": "commit pending; dated JSON only",
+    "rewrittenCards": 2,
+    "carriedForwardCards": 118
   },
   "runManifest": {
-    "runId": "daily-report-20260817-095939",
-    "startedAt": "2026-08-17T09:59:39+02:00",
-    "endedAt": "2026-08-17T10:00:45+02:00",
+    "runId": "daily-report-20260817-105902",
+    "startedAt": "2026-08-17T10:59:02+02:00",
+    "endedAt": "2026-08-17T11:00:02+02:00",
     "timezone": "Europe/Madrid",
     "schedule": "10:00 Europe/Madrid",
-    "previousSuccessfulRun": "daily-report-20260814-180954",
+    "previousSuccessfulRun": "daily-report-20260817-095939",
     "previousEdition": "2026-08-14",
-    "coverageWindow": "2026-08-14T18:09:54+02:00/2026-08-17T09:59:39+02:00",
+    "coverageWindow": "2026-08-17T09:59:39+02:00/2026-08-17T10:59:02+02:00",
     "completedAssignments": [
       "International",
       "Ohio",
@@ -7220,38 +8599,48 @@
       "EU video-game events": 5,
       "Finance": 5
     },
-    "rollup": "completed after bounded official and independent checks; fresh updates selected for Hormuz shipping, Valencia and Spain weather, Xàtiva, LaLiga and Premier League timing, Gamescom, and market-policy checkpoints; ongoing and upcoming context retained elsewhere",
+    "rollup": "completed after a one-hour bounded refresh; AP deadline and market updates selected, official sports rail data added, ongoing and upcoming context retained elsewhere",
     "currentEditionDate": "2026-08-17",
     "blockedCategories": [],
     "uncertainCategories": [
       "Hormuz responsibility and safe-navigation arrangements remain unsettled.",
       "Storm warnings, local damage, and event access can change after publication.",
-      "Most sports cards remain schedule, roster, or preseason checkpoints rather than same-day results.",
+      "Offseason sports desks have no verified current completed game to display.",
       "Finance cards use the latest verified regional snapshots because Monday closes were not complete at run time."
     ],
     "unresolvedConflicts": [
       "The UAE attribution of the Hormuz attacks remains an attributed claim pending independent investigation.",
-      "Weather warnings, local event access, and market-session closes remain time-sensitive."
+      "Weather warnings, local event access, and market-session closes remain time-sensitive.",
+      "IndyCar’s bounded official extract confirmed the Markham event but did not expose its final race result."
     ],
     "sourceDegradation": [
-      "Reuters direct pages, The Athletic / NYT, Politico Europe, and some local indexes remained uneven; accessible official, AP, and local fallbacks were used.",
-      "Sports discovery did not establish new same-day results across every league; those desks remain explicit schedule, roster, transfer, or upcoming-event context.",
+      "Reuters direct pages, The Athletic / NYT, Politico Europe, and some local indexes remained uneven; accessible AP, official, and local fallbacks were used.",
+      "Official basketball and college-football sources did not expose a current completed game in the coverage window, so those sports arrays remain empty rather than padded.",
       "Official weather and event sources were available, but warning and access status can change after publication."
     ],
     "jsonOutputPath": "data-20260817.json",
     "rendererVerification": {
       "status": "passed",
-      "checks": ["HTTP 200 for index.html?date=20260817", "HTTP 200 for data-20260817.json", "24 sections / 120 cards", "Finance rail 5 cards with USA 2 / EU 2 / Asia 1", "Next-date probe returned 404", "index.html not modified by this run; pre-existing working-tree diff detected"]
+      "checks": [
+        "HTTP 200 for index.html?date=20260817",
+        "HTTP 200 for data-20260817.json",
+        "24 sections / 120 cards",
+        "15 sports rails with games, standings, and schedule arrays",
+        "Finance rail 5 cards with USA 2 / EU 2 / Asia 1",
+        "LaLiga schedule modal opened with six upcoming fixtures",
+        "Next-date probe returned 404",
+        "index.html unchanged by this run"
+      ]
     },
-    "publicationStatus": "local-only; publication not attempted",
-    "rewrittenCards": 12,
-    "carriedForwardCards": 108
+    "publicationStatus": "commit pending; dated JSON only",
+    "rewrittenCards": 2,
+    "carriedForwardCards": 118
   },
   "pulse": {
     "desks": 24,
     "cards": 120,
     "sources": 92,
-    "liveClaims": 12,
-    "uncertain": 108
+    "liveClaims": 14,
+    "uncertain": 106
   }
 }
