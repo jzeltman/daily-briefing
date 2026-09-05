@@ -9080,7 +9080,13 @@
       "status": "pending",
       "checks": []
     },
-    "publicationStatus": "pending commit and push",
+    "publicationStatus": "blocked: push rejected by environment safety gate; explicit authorization required for origin/main",
+    "pushResult": {
+      "status": "blocked",
+      "remoteRef": "origin/main",
+      "remoteSha": "b0c0eaa5ea0b712d0151c4e723f5e4a01443c344",
+      "localCommitSha": "a274991"
+    },
     "rewrittenCards": 15,
     "carriedForwardCards": 102
   },
