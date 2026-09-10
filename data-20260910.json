@@ -8866,14 +8866,21 @@
     ],
     "jsonOutputPath": "data-20260910.json",
     "rendererVerification": {
-      "status": "pending",
-      "checks": []
+      "status": "passed",
+      "checks": [
+        "JSON/card/sports/finance contract checks passed",
+        "index.html?date=20260910 → HTTP 200",
+        "data-20260910.json → HTTP 200",
+        "next data-20260911.json → HTTP 404",
+        "stable renderer loader/date-navigation assertions passed",
+        "index.html and template.html unchanged by this run"
+      ]
     },
-    "publicationStatus": "pending commit and push",
+    "publicationStatus": "blocked pending explicit authorization for shared default branch",
     "rewrittenCards": 13,
     "carriedForwardCards": 103,
-    "commitSha": null,
-    "pushResult": "pending"
+    "commitSha": "6d4e2e2b18adbe8173c6d06564f848347e5da857",
+    "pushResult": "rejected by safety gate; read-only origin/main verification failed through proxy"
   },
   "pulse": {
     "desks": 24,
