@@ -8468,10 +8468,16 @@
     ],
     "jsonOutputPath": "data-20260924.json",
     "rendererVerification": {
-      "status": "pending",
-      "checks": []
+      "status": "passed",
+      "checks": [
+        "index.html?date=20260924 -> 200",
+        "data-20260924.json -> 200",
+        "next edition data-20260925.json -> 404",
+        "handoff validator passed",
+        "stable renderer files unchanged"
+      ]
     },
-    "publicationStatus": "pending commit and push",
+    "publicationStatus": "published: commit bfef99b21986d48c3826977005cc81c69c38830d pushed to origin/main and verified",
     "rewrittenCards": 17,
     "carriedForwardCards": 78
   },
