@@ -7910,16 +7910,16 @@
     ],
     "jsonOutputPath": "data-20260925.json",
     "rendererVerification": {
-      "status": "pending",
+      "status": "passed",
       "checks": [
-        "handoff validator pending",
-        "index.html?date=20260925 pending",
-        "data-20260925.json pending",
-        "next edition data-20260926.json expected 404",
+        "handoff validator passed",
+        "index.html?date=20260925 -> 200",
+        "data-20260925.json -> 200",
+        "next edition data-20260926.json -> 404",
         "index.html and template.html unchanged"
       ]
     },
-    "publicationStatus": "pending: generated edition not yet committed or pushed",
+    "publicationStatus": "published: generated commit 1ce82464c6d701720bd384e0e5ccf938fa4aca99 pushed to origin/main and verified",
     "rewrittenCards": 14,
     "carriedForwardCards": 102
   },
