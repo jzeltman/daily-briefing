@@ -7968,10 +7968,17 @@
       "Asia market data was intentionally left time-zone staggered at the canonical cutoff."
     ],
     "jsonOutputPath": "data-20261003.json",
-    "publicationStatus": "pending validation and publication",
+    "publicationStatus": "published: generated commit 85b3674ed952cac764c9102eeb2703c1d5fcf6ab pushed to origin/main and verified",
     "rendererVerification": {
-      "status": "pending",
-      "checks": []
+      "status": "passed",
+      "checks": [
+        "handoff validator passed",
+        "JSON contract and sports-rail checks passed",
+        "index.html?date=20261003 -> 200",
+        "data-20261003.json -> 200",
+        "next edition data-20261004.json -> 404",
+        "index.html and template.html unchanged"
+      ]
     },
     "rewrittenCards": 14,
     "carriedForwardCards": 102
