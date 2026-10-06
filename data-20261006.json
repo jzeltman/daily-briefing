@@ -8707,25 +8707,27 @@
       "College football has no confirmed official YouTube channel in the manifest, so completed college games omit videoUrl/videoLabel."
     ],
     "jsonOutputPath": "data-20261006.json",
-    "publicationStatus": "pending: generated edition validated locally; publication is recorded after commit and push verification",
+    "publicationStatus": "published: generated commit c1360394d17c86b910f57ea06bf0f2fd6ef2944c pushed to origin/main and verified at origin/main c1360394d17c86b910f57ea06bf0f2fd6ef2944c",
     "rendererVerification": {
-      "status": "pending",
+      "status": "passed",
       "checks": [
-        "handoff validator pending",
-        "JSON contract and sports-rail checks pending",
-        "renderer probe pending",
+        "handoff validator passed",
+        "JSON contract and sports-rail checks passed",
+        "index.html?date=20261006 -> 200",
+        "data-20261006.json -> 200",
+        "next edition data-20261007.json -> 404",
         "index.html and template.html unchanged"
       ]
     },
     "rewrittenCards": 10,
     "carriedForwardCards": 106,
     "publication": {
-      "status": "pending",
-      "commitSha": null,
+      "status": "published",
+      "commitSha": "c1360394d17c86b910f57ea06bf0f2fd6ef2944c",
       "push": {
-        "status": "pending",
+        "status": "succeeded",
         "remote": "origin/main",
-        "verifiedSha": null,
+        "verifiedSha": "c1360394d17c86b910f57ea06bf0f2fd6ef2944c",
         "force": false
       }
     }
