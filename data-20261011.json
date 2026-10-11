@@ -8133,7 +8133,7 @@
       "The carried-forward college-football rail has no confirmed official YouTube channel, so no video link is added there."
     ],
     "jsonOutputPath": "data-20261011.json",
-    "publicationStatus": "pending commit and push verification",
+    "publicationStatus": "published",
     "rendererVerification": {
       "status": "passed",
       "checks": [
@@ -8148,15 +8148,15 @@
     "rewrittenCards": 15,
     "carriedForwardCards": 101,
     "publication": {
-      "status": "pending",
-      "commitSha": null,
+      "status": "published",
+      "commitSha": "235044515b80f2b2b49357d86be5d25ad727570d",
       "push": {
-        "status": "pending",
+        "status": "verified",
         "remote": "origin/main",
-        "verifiedSha": null,
+        "verifiedSha": "235044515b80f2b2b49357d86be5d25ad727570d",
         "force": false
       }
     }
   },
-  "pulse": "24 desks · 116 cards · 2026-10-10T07:00:00+02:00/2026-10-11T07:00:00+02:00 · source-backed carry-forward with 16 refreshed cards"
+  "pulse": "24 desks · 116 cards · 2026-10-10T07:00:00+02:00/2026-10-11T07:00:00+02:00 · source-backed carry-forward with 15 refreshed cards"
 }
