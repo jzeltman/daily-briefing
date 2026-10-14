@@ -8078,7 +8078,8 @@
     ],
     "jsonOutputPath": "data-20261014.json",
     "publicationStatus": "published",
-    "commitSHA": "8025132890e63c98e27a687266c124a3e8932704",
+    "editionCommitSHA": "8025132890e63c98e27a687266c124a3e8932704",
+    "commitSHA": "7fad26963e0b8394670640cea4a2736ca744cbc9",
     "pushResult": "origin/main verified at commit SHA",
     "rendererVerification": {
       "status": "passed",
