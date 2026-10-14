@@ -8077,7 +8077,9 @@
       "No confirmed official YouTube channel was available for the college-football rail, so no video URL was fabricated."
     ],
     "jsonOutputPath": "data-20261014.json",
-    "publicationStatus": "pending commit and push",
+    "publicationStatus": "published",
+    "commitSHA": "8025132890e63c98e27a687266c124a3e8932704",
+    "pushResult": "origin/main verified at commit SHA",
     "rendererVerification": {
       "status": "passed",
       "checks": [
