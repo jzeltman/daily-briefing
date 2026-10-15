@@ -8120,10 +8120,10 @@
       "No unsupported sports video URLs were fabricated."
     ],
     "jsonOutputPath": "data-20261015.json",
-    "publicationStatus": "awaiting-commit-and-push",
-    "editionCommitSHA": null,
-    "commitSHA": null,
-    "pushResult": null,
+    "publicationStatus": "published",
+    "editionCommitSHA": "ad6ccacee874a9c599ef4ae217479cf751204b65",
+    "commitSHA": "ad6ccacee874a9c599ef4ae217479cf751204b65",
+    "pushResult": "origin/main verified at ad6ccacee874a9c599ef4ae217479cf751204b65",
     "rendererVerification": {
       "status": "passed-with-socket-policy-note",
       "checks": [
