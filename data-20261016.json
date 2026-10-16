@@ -9297,10 +9297,10 @@
       "Local HTTP socket probing may be unavailable in this environment; source-level renderer resolution is required."
     ],
     "jsonOutputPath": "data-20261016.json",
-    "publicationStatus": "pending validation and publication",
-    "editionCommitSHA": null,
-    "commitSHA": null,
-    "pushResult": null,
+    "publicationStatus": "published",
+    "editionCommitSHA": "a1c9b7885a5d32c1761077d75b61e9acdf458a31",
+    "commitSHA": "a1c9b7885a5d32c1761077d75b61e9acdf458a31",
+    "pushResult": "non-force push succeeded; origin/main accepted a1c9b7885a5d32c1761077d75b61e9acdf458a31",
     "rendererVerification": {
       "status": "passed-with-socket-policy-note",
       "checks": [
