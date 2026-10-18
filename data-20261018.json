@@ -9687,12 +9687,23 @@
       "Local HTTP socket probing may be unavailable in this environment; source-level renderer resolution is required."
     ],
     "jsonOutputPath": "data-20261018.json",
-    "publicationStatus": "pending commit and push",
+    "publicationStatus": "published",
+    "editionCommitSHA": "9bc44e9227b7cc002d9813a311fe448f761ab704",
+    "commitSHA": "9bc44e9227b7cc002d9813a311fe448f761ab704",
+    "pushResult": "non-force push succeeded; origin/main verified at 9bc44e9227b7cc002d9813a311fe448f761ab704",
     "rewrittenCards": 18,
     "carriedForwardCards": 94,
     "rendererVerification": {
-      "status": "pending",
-      "checks": []
+      "status": "passed",
+      "checks": [
+        "handoff validator passed",
+        "JSON, Finance, and sports-rail checks passed",
+        "index.html source resolver maps 20261018 to data-20261018.json",
+        "data-20261018.json exists and parses",
+        "data-20261019.json is absent; Next remains disabled",
+        "index.html and template.html unchanged",
+        "local HTTP probe blocked by the environment socket policy; source-level renderer resolution passed"
+      ]
     }
   },
   "pulse": {
