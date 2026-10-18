@@ -9690,7 +9690,8 @@
     "publicationStatus": "published",
     "editionCommitSHA": "9bc44e9227b7cc002d9813a311fe448f761ab704",
     "commitSHA": "9bc44e9227b7cc002d9813a311fe448f761ab704",
-    "pushResult": "non-force push succeeded; origin/main verified at 9bc44e9227b7cc002d9813a311fe448f761ab704",
+    "publicationManifestCommitSHA": "b9ce9a2c2cc9f85b3bfbdac6e76cf0da51e849fb",
+    "pushResult": "edition commit pushed non-force and verified at 9bc44e9227b7cc002d9813a311fe448f761ab704; publication-manifest commit b9ce9a2c2cc9f85b3bfbdac6e76cf0da51e849fb pushed non-force and verified",
     "rewrittenCards": 18,
     "carriedForwardCards": 94,
     "rendererVerification": {
