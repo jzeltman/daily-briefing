@@ -9785,7 +9785,7 @@
       "Local HTTP socket probing may be unavailable; source-level renderer resolution is required."
     ],
     "jsonOutputPath": "data-20261019.json",
-    "publicationStatus": "pending non-force push",
+    "publicationStatus": "published",
     "rewrittenCards": 15,
     "carriedForwardCards": 97,
     "rendererVerification": {
@@ -9799,6 +9799,15 @@
         "index.html and template.html unchanged",
         "local HTTP probe not run; source-level renderer resolution passed"
       ]
+    },
+    "editionCommitSHA": "f1a09ea520e3d4cb1edf80bf6ab3c4acbaa0bc4f",
+    "commitSHA": "f1a09ea520e3d4cb1edf80bf6ab3c4acbaa0bc4f",
+    "pushResult": {
+      "status": "succeeded",
+      "remote": "origin",
+      "branch": "main",
+      "forced": false,
+      "verifiedRemoteRef": "f1a09ea520e3d4cb1edf80bf6ab3c4acbaa0bc4f"
     }
   },
   "pulse": {
