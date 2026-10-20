@@ -9402,7 +9402,7 @@
       "Local HTTP socket probing may be unavailable; source-level renderer resolution is required."
     ],
     "jsonOutputPath": "data-20261020.json",
-    "publicationStatus": "ready for publication",
+    "publicationStatus": "published",
     "rewrittenCards": 19,
     "carriedForwardCards": 93,
     "rendererVerification": {
@@ -9417,13 +9417,14 @@
         "local HTTP probe blocked by managed socket policy; source-level renderer resolution passed"
       ]
     },
-    "editionCommitSHA": null,
-    "commitSHA": null,
+    "editionCommitSHA": "b9f76a4374c76f8fbe7bc545218c28e8f3ee49b1",
+    "commitSHA": "b9f76a4374c76f8fbe7bc545218c28e8f3ee49b1",
     "pushResult": {
-      "status": "pending",
+      "status": "succeeded",
       "remote": "origin",
       "branch": "main",
-      "forced": false
+      "forced": false,
+      "verifiedRemoteRef": "b9f76a4374c76f8fbe7bc545218c28e8f3ee49b1"
     }
   },
   "pulse": {
