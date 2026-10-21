@@ -9432,7 +9432,7 @@
       "Completed-game recap links use the approved official league/team channels; no individual video URL was fabricated."
     ],
     "jsonOutputPath": "data-20261021.json",
-    "publicationStatus": "ready for publication",
+    "publicationStatus": "published",
     "rewrittenCards": 10,
     "carriedForwardCards": 102,
     "rendererVerification": {
@@ -9444,16 +9444,19 @@
         "data-20261021.json exists and parses",
         "data-20261022.json is absent; Next remains disabled",
         "index.html and template.html unchanged",
-        "renderer resolution checked at source level"
+        "renderer resolution checked at source level",
+        "non-force push succeeded",
+        "origin/main verified at 3abc56f9e28ad6556a671de2b422f53ea3054638"
       ]
     },
-    "editionCommitSHA": null,
-    "commitSHA": null,
+    "editionCommitSHA": "3abc56f9e28ad6556a671de2b422f53ea3054638",
+    "commitSHA": "3abc56f9e28ad6556a671de2b422f53ea3054638",
     "pushResult": {
-      "status": "pending",
+      "status": "succeeded",
       "remote": "origin",
       "branch": "main",
-      "forced": false
+      "forced": false,
+      "verifiedRemoteRef": "3abc56f9e28ad6556a671de2b422f53ea3054638"
     }
   },
   "pulse": {
