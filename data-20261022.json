@@ -8836,24 +8836,30 @@
       "Official league/team YouTube channels are used for completed-game recap destinations; no individual video URL was fabricated."
     ],
     "jsonOutputPath": "data-20261022.json",
-    "publicationStatus": "pending-validation",
+    "publicationStatus": "published",
     "rewrittenCards": 17,
     "carriedForwardCards": 95,
     "rendererVerification": {
-      "status": "pending",
+      "status": "passed",
       "checks": [
-        "handoff validator pending",
-        "JSON and source checks pending",
-        "index.html and template.html unchanged"
+        "handoff validator passed",
+        "JSON, Finance 2/2/1, sports-rail and required game-field checks passed",
+        "index.html source resolver maps 20261022 to data-20261022.json",
+        "data-20261022.json exists and parses",
+        "data-20261023.json is absent; Next remains disabled",
+        "index.html and template.html unchanged",
+        "non-force push succeeded",
+        "origin/main verified at 8da5cae9d141ec32fc28723d49e5113e9a5aac81"
       ]
     },
-    "editionCommitSHA": null,
-    "commitSHA": null,
+    "editionCommitSHA": "8da5cae9d141ec32fc28723d49e5113e9a5aac81",
+    "commitSHA": "8da5cae9d141ec32fc28723d49e5113e9a5aac81",
     "pushResult": {
-      "status": "pending",
+      "status": "succeeded",
       "remote": "origin",
       "branch": "main",
-      "forced": false
+      "forced": false,
+      "verifiedRemoteRef": "8da5cae9d141ec32fc28723d49e5113e9a5aac81"
     }
   },
   "pulse": {
