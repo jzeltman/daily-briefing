@@ -9188,15 +9188,22 @@
       "Official league/team YouTube channels are used for completed-game recap destinations; no individual video URL was fabricated."
     ],
     "jsonOutputPath": "data-20261023.json",
-    "publicationStatus": "generated",
+    "publicationStatus": "published",
+    "publicationCommit": "b9714bf839abec842f91290e2e3dd40bad9987e2",
+    "pushResult": {
+      "status": "verified",
+      "remote": "origin",
+      "ref": "refs/heads/main",
+      "sha": "b9714bf839abec842f91290e2e3dd40bad9987e2"
+    },
     "rewrittenCards": 13,
     "carriedForwardCards": 99,
     "rendererVerification": {
-      "status": "pending",
+      "status": "passed",
       "checks": [
-        "handoff validator pending",
-        "JSON contract pending",
-        "source-level renderer resolution pending",
+        "handoff validator passed",
+        "JSON contract passed",
+        "source-level renderer resolution passed",
         "index.html and template.html unchanged"
       ]
     }
