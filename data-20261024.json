@@ -9439,9 +9439,14 @@
       "Local HTTP renderer probe was attempted but blocked by the managed socket policy; static filename-resolution checks passed."
     ],
     "jsonOutputPath": "data-20261024.json",
-    "publicationStatus": "pending",
-    "publicationCommit": null,
-    "pushResult": null,
+    "publicationStatus": "published",
+    "publicationCommit": "272d3f5",
+    "pushResult": {
+      "status": "verified",
+      "remote": "origin",
+      "ref": "refs/heads/main",
+      "sha": "272d3f5"
+    },
     "rewrittenCards": 12,
     "carriedForwardCards": 100,
     "rendererVerification": {
