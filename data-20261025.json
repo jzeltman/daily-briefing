@@ -9778,7 +9778,7 @@
       "Official league/team YouTube channels are used for completed-game recap destinations; no individual video URL was fabricated."
     ],
     "jsonOutputPath": "data-20261025.json",
-    "publicationStatus": "ready-to-publish",
+    "publicationStatus": "published",
     "rewrittenCards": 15,
     "carriedForwardCards": 97,
     "rendererVerification": {
@@ -9791,6 +9791,13 @@
         "next edition data-20261026.json absent",
         "index.html and template.html unchanged"
       ]
+    },
+    "publicationCommit": "86d3a6e96db60fa44e029d4c074d33fb4d46d9f7",
+    "pushResult": {
+      "status": "verified",
+      "remote": "origin",
+      "ref": "refs/heads/main",
+      "sha": "86d3a6e96db60fa44e029d4c074d33fb4d46d9f7"
     }
   },
   "pulse": {
