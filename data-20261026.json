@@ -9046,7 +9046,7 @@
     "schedule": "07:00 Europe/Madrid",
     "timezone": "Europe/Madrid",
     "startedAt": "2026-10-26T09:51:15+01:00",
-    "endedAt": "2026-10-26T09:51:15+01:00",
+    "endedAt": "2026-10-26T09:56:00+01:00",
     "previousSuccessfulRun": "daily-report-20261025-070000-202610251001",
     "previousEdition": "2026-10-25",
     "coverageWindow": "2026-10-25T07:00:00+01:00/2026-10-26T07:00:00+01:00",
@@ -9329,12 +9329,27 @@
       "Completed-game recap destinations use official league channels; no individual video URL was fabricated."
     ],
     "jsonOutputPath": "data-20261026.json",
-    "publicationStatus": "pending-validation",
+    "publicationStatus": "published",
     "rewrittenCards": 22,
     "carriedForwardCards": 90,
     "rendererVerification": {
-      "status": "pending",
-      "checks": []
+      "status": "passed",
+      "checks": [
+        "handoff validator passed",
+        "JSON contract passed",
+        "sports rail and Finance 2/2/1 checks passed",
+        "source-level renderer resolution passed for index.html?date=20261026 and data-20261026.json",
+        "next edition data-20261027.json absent",
+        "index.html and template.html unchanged",
+        "localhost HTTP probe blocked by managed socket policy"
+      ]
+    },
+    "publicationCommit": "5c0928773d754ded65755ff5a724e223b4d836cf",
+    "pushResult": {
+      "status": "verified",
+      "remote": "origin",
+      "ref": "refs/heads/main",
+      "sha": "5c0928773d754ded65755ff5a724e223b4d836cf"
     }
   },
   "pulse": {
