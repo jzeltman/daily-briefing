@@ -9703,13 +9703,13 @@
       "Completed-game recap destinations use official league channels; no individual video URL was fabricated."
     ],
     "jsonOutputPath": "data-20261027.json",
-    "publicationStatus": "pending",
+    "publicationStatus": "published",
     "rewrittenCards": 17,
     "carriedForwardCards": 95,
     "rendererVerification": {
       "status": "passed",
       "checks": [
-        "handoff validator pending final file check",
+        "handoff validator passed",
         "JSON contract passed",
         "sports rails and Finance 2/2/1 refreshed",
         "source-level renderer resolution passed for index.html?date=20261027 and data-20261027.json",
@@ -9717,12 +9717,12 @@
         "index.html and template.html unchanged"
       ]
     },
-    "publicationCommit": null,
+    "publicationCommit": "125175c4e1e9793ba69887ed208826de3e24a0ea",
     "pushResult": {
-      "status": "pending",
+      "status": "verified",
       "remote": "origin",
       "ref": "refs/heads/main",
-      "sha": null
+      "sha": "125175c4e1e9793ba69887ed208826de3e24a0ea"
     }
   },
   "pulse": {
